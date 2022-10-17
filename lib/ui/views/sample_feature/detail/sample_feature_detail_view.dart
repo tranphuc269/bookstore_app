@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/themes/app_colors.dart';
 import '../../../../core/themes/app_style.dart';
-import '../../../../data/models/sample_feature/sample_feature.dart';
+import '../../../../data/models/hives/sample_feature/sample_feature.dart';
 import '../../../widgets/base/base_view.dart';
 import '../../../widgets/cached_image.dart';
 import '../../../widgets/colored_status_bar.dart';

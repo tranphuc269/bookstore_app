@@ -1,5 +1,5 @@
 
-import '../../data/models/user/user.dart';
+import '../../data/models/response/user/user.dart';
 
 enum AppType { INITIAL, FIRST_INSTALL, UNAUTHENTICATED, AUTHENTICATED }
 

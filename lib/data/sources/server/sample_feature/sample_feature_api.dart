@@ -1,5 +1,6 @@
-import '../../../models/repo/repo.dart';
-import '../../../models/sample_feature/sample_feature.dart';
+import '../../../models/hives/repo/repo.dart';
+import '../../../models/hives/sample_feature/sample_feature.dart';
+
 
 abstract class SampleFeatureApi {
   Future<List<SampleFeature>> getUsers({required int page, required int perPage});

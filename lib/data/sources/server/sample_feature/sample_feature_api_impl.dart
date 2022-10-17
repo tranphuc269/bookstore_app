@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import '../../../../core/network/api_request.dart';
-import '../../../models/repo/repo.dart';
-import '../../../models/sample_feature/sample_feature.dart';
+import '../../../models/hives/repo/repo.dart';
+import '../../../models/hives/sample_feature/sample_feature.dart';
 import 'sample_feature_api.dart';
 
 

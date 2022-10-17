@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/base/base_controller.dart';
 import '../../../../core/helper/dialog_helper.dart';
-import '../../../../data/models/sample_feature/sample_feature.dart';
+import '../../../../data/models/hives/sample_feature/sample_feature.dart';
 import '../../../../data/repositories/sample_feature/sample_feature_repository.dart';
 
 class SampleFeatureDetailController extends BaseController {

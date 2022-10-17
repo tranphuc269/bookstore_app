@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:get/get.dart';
 
 import '../../../../core/base/pagination_controller.dart';
-import '../../../../data/models/sample_feature/sample_feature.dart';
+import '../../../../data/models/hives/sample_feature/sample_feature.dart';
 import '../../../../data/repositories/sample_feature/sample_feature_repository.dart';
 import '../detail/sample_feature_detail_view.dart';
 

@@ -1,4 +1,4 @@
-import '../../../models/sample_feature/sample_feature.dart';
+import '../../../models/hives/sample_feature/sample_feature.dart';
 
 abstract class SampleFeatureDao {
   bool boxIsEmpty();

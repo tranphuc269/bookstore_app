@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/themes/app_style.dart';
-import '../../../../data/models/sample_feature/sample_feature.dart';
+import '../../../../data/models/hives/sample_feature/sample_feature.dart';
 import '../../../widgets/base/base_pagination_view.dart';
 import '../../../widgets/cached_image.dart';
 import 'sample_feature_list_controller.dart';

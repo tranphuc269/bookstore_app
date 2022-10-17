@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import '../../models/sample_feature/sample_feature.dart';
+import '../../models/hives/sample_feature/sample_feature.dart';
 import '../../sources/local/sample_feature/sample_feature_dao.dart';
 import '../../sources/server/sample_feature/sample_feature_api.dart';
 import 'sample_feature_repository.dart';

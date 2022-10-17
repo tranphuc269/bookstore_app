@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
-import '../../../core/database/hive/entities/repo_entity.dart';
-import '../../../core/database/hive/hive_adapters.dart';
-import '../../../core/database/hive/hive_box.dart';
+import '../../../../core/database/hive/entities/repo_entity.dart';
+import '../../../../core/database/hive/hive_adapters.dart';
+import '../../../../core/database/hive/hive_box.dart';
 import '../sample_feature/sample_feature.dart';
 
 part 'repo.g.dart';

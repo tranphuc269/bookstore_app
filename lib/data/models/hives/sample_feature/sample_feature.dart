@@ -1,8 +1,8 @@
 import 'package:hive/hive.dart';
 
-import '../../../core/database/hive/entities/user_entity.dart';
-import '../../../core/database/hive/hive_adapters.dart';
-import '../../../core/database/hive/hive_box.dart';
+import '../../../../core/database/hive/entities/user_entity.dart';
+import '../../../../core/database/hive/hive_adapters.dart';
+import '../../../../core/database/hive/hive_box.dart';
 import '../repo/repo.dart';
 
 part 'sample_feature.g.dart';

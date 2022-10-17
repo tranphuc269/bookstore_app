@@ -1,4 +1,4 @@
-import '../../../models/user/user.dart';
+import '../../../models/response/user/user.dart';
 
 abstract class AuthApi {
   Future<User> verifyToken({

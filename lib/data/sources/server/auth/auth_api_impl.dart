@@ -8,7 +8,7 @@ import '../../../../core/database/secure_storage/secure_storage_manager.dart';
 import '../../../../core/network/api_request.dart';
 import '../../../../core/network/api_response.dart';
 import '../../../../core/network/api_url.dart';
-import '../../../models/user/user.dart';
+import '../../../models/response/user/user.dart';
 import 'auth_api.dart';
 
 class AuthApiImpl implements AuthApi {

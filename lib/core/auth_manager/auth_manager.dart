@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
-import '../../data/models/user/user.dart';
+import '../../data/models/response/user/user.dart';
 import '../../data/sources/server/auth/auth_api_impl.dart';
 import '../../ui/views/auth/intro/intro_view.dart';
 import '../../ui/views/auth/login/login_view.dart';
