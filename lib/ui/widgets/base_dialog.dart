@@ -7,10 +7,10 @@ import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_style.dart';
 import 'base_button.dart';
 
-class SkyDialog extends StatelessWidget {
-  const SkyDialog({
-    Key? key,
+class BaseDialog extends StatelessWidget {
+  const BaseDialog({
     required this.child,
+    Key? key,
   }) : super(key: key);
   final Widget child;
 
@@ -79,7 +79,7 @@ class LoadingDialog extends StatelessWidget {
           children: [
             Text(
               'Loading',
-              style: AppStyle.subtitle1.copyWith(color: Colors.white),
+              style: AppStyle.subtitle24.copyWith(color: Colors.white),
             ),
             const SizedBox(width: 4),
             const SpinKitThreeBounce(color: Colors.white, size: 16),
@@ -190,7 +190,8 @@ class DialogAlert extends StatelessWidget {
     required String description,
     required VoidCallback onConfirm,
     Color? backgroundColorHeader,
-    Widget? header, required void Function() onCancel,
+    Widget? header,
+    required void Function() onCancel,
   }) =>
       DialogAlert(
         title: title,
@@ -243,7 +244,7 @@ class DialogAlert extends StatelessWidget {
                       const SizedBox(height: 64),
                       Text(
                         title,
-                        style: AppStyle.subtitle3.copyWith(
+                        style: AppStyle.subtitle18.copyWith(
                           fontWeight: AppStyle.semiBold,
                         ),
                       ),
@@ -254,7 +255,7 @@ class DialogAlert extends StatelessWidget {
                         style: const TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(height: 32),
-                      SkyButton(
+                      BaseButton(
                         text: confirmText,
                         textColor: confirmTextColor ?? AppColors.onPrimary,
                         color: confirmBackgroundColor ?? Colors.white,
@@ -265,7 +266,7 @@ class DialogAlert extends StatelessWidget {
                       const SizedBox(height: 8),
                       Visibility(
                         visible: onCancel != null,
-                        child: SkyButton(
+                        child: BaseButton(
                           text: 'Tidak',
                           fontWeight: AppStyle.semiBold,
                           color: cancelColor,
@@ -299,7 +300,7 @@ class SoonDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SkyDialog(
+    return BaseDialog(
       child: Column(
         children: [
           SizedBox(
@@ -313,13 +314,13 @@ class SoonDialog extends StatelessWidget {
           ),
           Text(
             'Fitur ini lagi dikembangin..',
-            style: AppStyle.subtitle4,
+            style: AppStyle.subtitle16,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 24),
           Align(
             alignment: Alignment.bottomRight,
-            child: SkyButton(
+            child: BaseButton(
               onPressed: () => Get.back(),
               text: 'OK',
               color: AppColors.primary,

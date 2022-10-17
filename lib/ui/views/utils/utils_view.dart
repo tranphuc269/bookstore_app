@@ -58,12 +58,12 @@ class _UtilsViewState extends State<UtilsView> {
                 ),
                 Text('Sample Currency Format = ${currency.currencyFormat()}'),
                 const SizedBox(height: 12),
-                SkyButton(
+                BaseButton(
                   onPressed: () => LocaleHelper().showLocaleDialog(context),
                   text: International.changeLanguage.tr,
                   icon: CupertinoIcons.paintbrush,
                 ),
-                SkyButton(
+                BaseButton(
                   onPressed: () {
                     AppDialog.show(
                       typeDialog: TypeDialog.WARNING,
@@ -74,14 +74,14 @@ class _UtilsViewState extends State<UtilsView> {
                   text: 'Dialog',
                   icon: CupertinoIcons.conversation_bubble,
                 ),
-                SkyButton(
+                BaseButton(
                   onPressed: () {
                     Loading.show(dismissible: true);
                   },
                   text: 'Loading',
                   icon: CupertinoIcons.refresh_thick,
                 ),
-                SkyButton(
+                BaseButton(
                   onPressed: () {
                     final String? converted = DateTimeHelper(
                             startDate: DateTime.now(), endDate: DateTime.now())
@@ -90,7 +90,7 @@ class _UtilsViewState extends State<UtilsView> {
                   },
                   text: '${International.convert.tr} ${International.date.tr}',
                 ),
-                SkyButton(
+                BaseButton(
                   onPressed: () {
                     BottomSheetHelper.basic(
                       child: DatePickerWidget.range(
@@ -101,7 +101,7 @@ class _UtilsViewState extends State<UtilsView> {
                   text: 'Bottom Sheet + Date Range',
                   icon: Icons.date_range_outlined,
                 ),
-                SkyButton(
+                BaseButton(
                   onPressed: () {
                     final String converted = AppConverter.replaceStringRange(
                         'name@email.com', 2, 5, '*');
@@ -112,7 +112,7 @@ class _UtilsViewState extends State<UtilsView> {
                   icon: CupertinoIcons.t_bubble,
                 ),
                 const SizedBox(height: 12),
-                SkyFormField(
+                BaseFormField(
                   controller: currencyCtr,
                   initialValue: 0.toStringIDR(),
                   label: International.price.tr,

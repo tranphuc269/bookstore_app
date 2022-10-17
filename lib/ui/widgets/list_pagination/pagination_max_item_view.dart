@@ -13,7 +13,7 @@ class PaginationMaxItemView extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           International.maxItem.tr,
-          style: AppStyle.subtitle4.copyWith(
+          style: AppStyle.subtitle16.copyWith(
             color: Colors.grey,
             fontWeight: FontWeight.w600,
           ),

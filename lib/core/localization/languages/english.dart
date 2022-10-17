@@ -5,7 +5,7 @@ const Map<String, String> en = {
   International.name : 'name',
   International.email : 'Email',
   International.password : 'Password',
-  International.home : 'Home', // with argument using %s
+  International.home : 'Home',
   International.dialog : 'Dialog',
   International.map : 'Maps',
   International.other : 'Others',
@@ -48,4 +48,16 @@ const Map<String, String> en = {
   International.maxItem : 'All items have been loaded.',
   International.emptyListTitle : 'Your list is empty!',
   International.emptyListSubtitle : 'Sorry, list data is empty. Maybe go back latter',
+
+
+  ///
+  International.homeDiscovery: 'Discovery',
+  International.all: 'All',
+  International.bookOfTheWeeks: 'Books of the week',
+  International.recommendations: 'Recommendations',
+  International.novelties: 'Novelties',
+  International.popular: 'Popular',
+  International.youWatched: 'You Watched',
+  International.category: 'Category',
+  International.producer: 'Producer',
 };

@@ -24,7 +24,7 @@ class SampleFeatureDetailView extends GetView<SampleFeatureDetailController> {
         // appBar: SkyAppBar.primary(title: controller.user.value?.username),
         body: SafeArea(
           child: Obx(
-            () => SkyView(
+            () => BaseView(
               loadingEnabled: controller.isLoading.isTrue,
               errorEnabled: controller.user.value == null,
               onRetry: () => controller.getDetailUser(),
@@ -45,7 +45,7 @@ class SampleFeatureDetailView extends GetView<SampleFeatureDetailController> {
   _buildHeader(SampleFeature? user) {
     return Padding(
       key: controller.headerKey,
-      padding: const EdgeInsets.symmetric(horizontal: AppConst.defaultMargin),
+      padding: const EdgeInsets.symmetric(horizontal: AppConst.defaultMediumMargin),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -88,7 +88,7 @@ class SampleFeatureDetailView extends GetView<SampleFeatureDetailController> {
   _buildDetailInfo(SampleFeature? user) {
     return Padding(
       key: controller.detailInfoKey,
-      padding: const EdgeInsets.symmetric(horizontal: AppConst.defaultMargin),
+      padding: const EdgeInsets.symmetric(horizontal: AppConst.defaultMediumMargin),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

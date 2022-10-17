@@ -5,7 +5,28 @@ import '../../core/themes/app_style.dart';
 
 ///  Default button on this project with primary color.
 ///  Change it as needed.
-class SkyButton extends StatelessWidget {
+class BaseButton extends StatelessWidget {
+
+  const BaseButton({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    this.icon,
+    this.color = AppColors.primary,
+    this.iconColor = Colors.white,
+    this.textColor = Colors.white,
+    this.height = 55,
+    this.width = double.infinity,
+    this.fontSize,
+    this.fontWeight,
+    this.borderRadius = 8,
+    this.elevation = 1,
+    this.margin,
+    this.padding,
+    this.wrapContent = false,
+    this.borderColor,
+    this.borderWidth,
+  }) : super(key: key);
   /// Background color of button. Default value is primary color.
   final Color color;
 
@@ -54,37 +75,16 @@ class SkyButton extends StatelessWidget {
   /// Width of button
   final bool wrapContent;
 
-  const SkyButton({
-    Key? key,
-    required this.text,
-    required this.onPressed,
-    this.icon,
-    this.color = AppColors.primary,
-    this.iconColor = Colors.white,
-    this.textColor = Colors.white,
-    this.height = 55,
-    this.width = double.infinity,
-    this.fontSize,
-    this.fontWeight,
-    this.borderRadius = 8,
-    this.elevation = 1,
-    this.margin,
-    this.padding,
-    this.wrapContent = false,
-    this.borderColor,
-    this.borderWidth,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: (wrapContent) ? null : width,
+      width: wrapContent ? null : width,
       height: height,
       padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
       margin: margin,
       child: ElevatedButton.icon(
         icon: Visibility(
-          visible: (icon != null),
+          visible: icon != null,
           child: Icon(
             icon,
             color: iconColor,
@@ -111,7 +111,7 @@ class SkyButton extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: AppStyle.subtitle4.copyWith(
+            style: AppStyle.subtitle16.copyWith(
               fontSize: fontSize,
               fontWeight: fontWeight,
               color: textColor,

@@ -39,11 +39,6 @@ class DoubleBack extends StatelessWidget {
 }
 
 class CircleIcon extends StatelessWidget {
-  final VoidCallback? onPressed;
-  final Widget icon;
-  final double? size;
-  final Color? backgroundColor, splashColor;
-
   const CircleIcon({
     Key? key,
     this.onPressed,
@@ -52,6 +47,10 @@ class CircleIcon extends StatelessWidget {
     this.size = 56,
     this.splashColor = Colors.grey,
   }) : super(key: key);
+  final VoidCallback? onPressed;
+  final Widget icon;
+  final double? size;
+  final Color? backgroundColor, splashColor;
 
   @override
   Widget build(BuildContext context) {
@@ -75,22 +74,22 @@ class CircleIcon extends StatelessWidget {
 /// Use this widget for give base padding every content in page.
 /// not required when your page is list
 class ContentWrapper extends StatelessWidget {
-  final Widget? child;
-  final bool top;
   const ContentWrapper({
-    Key? key,
     required this.child,
+    Key? key,
     this.top = false,
   }) : super(key: key);
+  final Widget? child;
+  final bool top;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.fromLTRB(
-        AppConst.defaultMargin,
-        top ? AppConst.defaultMargin : 0,
-        AppConst.defaultMargin,
-        AppConst.defaultMargin,
+        AppConst.defaultMediumMargin,
+        top ? AppConst.defaultMediumMargin : 0,
+        AppConst.defaultMediumMargin,
+        AppConst.defaultMediumMargin,
       ),
       child: child,
     );

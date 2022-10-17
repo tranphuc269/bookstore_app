@@ -16,7 +16,7 @@ class SampleFeatureListView extends GetView<SampleFeatureListController> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: SkyAppBar.secondary(title: International.userList.tr),
-      body: SkyPaginationView<SampleFeature>(
+      body: BasePaginationView<SampleFeature>(
         pagingController: controller.pagingController,
         onRefresh: () => controller.refreshPage(),
         itemBuilder: (BuildContext context, item, int index) {
@@ -29,7 +29,7 @@ class SampleFeatureListView extends GetView<SampleFeatureListController> {
             title: Text(item.username.toString()),
             subtitle: Text(
               item.gitUrl.toString(),
-              style: AppStyle.small,
+              style: AppStyle.normalSmall,
             ),
           );
         },

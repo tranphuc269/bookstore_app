@@ -32,7 +32,7 @@ class FollowerTabView extends GetView<SampleFeatureDetailController> {
                 ),
                 subtitle: Text(
                   user.gitUrl.toString(),
-                  style: AppStyle.small,
+                  style: AppStyle.normalSmall,
                 ),
               );
       },

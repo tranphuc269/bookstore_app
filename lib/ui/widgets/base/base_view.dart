@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../list_pagination/error_view.dart';
 import '../shimmer_detail.dart';
 
-class SkyView extends StatelessWidget {
-  const SkyView({
+class BaseView extends StatelessWidget {
+  const BaseView({
     required this.loadingEnabled,
     required this.errorEnabled,
     required this.onRetry,
@@ -25,21 +25,19 @@ class SkyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: RefreshIndicator(
-        onRefresh: () => Future.sync(onRetry),
-        child: SingleChildScrollView(
-          child: loadingEnabled
-              ? loadingView ?? const ShimmerDetail()
-              : errorEnabled
-                  ? errorView ??
-                      ErrorView(
-                        isScrollable: false,
-                        errorSubtitle: errorMsg,
-                        onRetry: onRetry,
-                      )
-                  : child,
-        ),
+    return RefreshIndicator(
+      onRefresh: () => Future.sync(onRetry),
+      child: SingleChildScrollView(
+        child: loadingEnabled
+            ? loadingView ?? const ShimmerDetail()
+            : errorEnabled
+            ? errorView ??
+            ErrorView(
+              isScrollable: false,
+              errorSubtitle: errorMsg,
+              onRetry: onRetry,
+            )
+            : child,
       ),
     );
   }

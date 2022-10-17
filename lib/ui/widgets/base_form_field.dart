@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_style.dart';
 
-class SkyFormField extends StatelessWidget {
-  const SkyFormField({
+class BaseFormField extends StatelessWidget {
+  const BaseFormField({
     required this.label,
     required this.hint,
     required this.validator,
@@ -88,7 +88,7 @@ class SkyFormField extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: Text(
                     endText.toString(),
-                    style: AppStyle.subtitle4.copyWith(
+                    style: AppStyle.subtitle16.copyWith(
                       color: AppColors.systemDarkGrey,
                     ),
                   ),
@@ -173,7 +173,7 @@ class CustomPasswordFieldForm extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: Text(
                     endText.toString(),
-                    style: AppStyle.subtitle4,
+                    style: AppStyle.subtitle16,
                   ),
                 ),
           hintText: hint,

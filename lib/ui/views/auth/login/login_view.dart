@@ -1,8 +1,5 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 
 import '../../../../core/helper/validator_helper.dart';
 import '../../../../core/localization/language_const.dart';
@@ -52,15 +49,13 @@ class LoginView extends GetView<LoginController> {
             children: [
               Text(International.login.tr, style: AppStyle.headline2),
               const SizedBox(height: 10),
-              Text(International.loginSubtitle.tr,
-                  style: AppStyle.subtitle4),
+              Text(International.loginSubtitle.tr, style: AppStyle.subtitle16),
             ],
           ),
         ),
         const Flexible(
           child: Image(
-              image: AssetImage('assets/images/img_login.png'),
-              width: 250),
+              image: AssetImage('assets/images/img_login.png'), width: 250),
         )
       ],
     );
@@ -73,8 +68,7 @@ class LoginView extends GetView<LoginController> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 20),
-          SkyFormField(
-
+          BaseFormField(
             label: International.phone.tr,
             hint: International.phone.tr,
             controller: controller.phoneController,
@@ -88,7 +82,7 @@ class LoginView extends GetView<LoginController> {
           ),
           const SizedBox(height: 20),
           Obx(
-                () => CustomPasswordFieldForm(
+            () => CustomPasswordFieldForm(
               label: International.password.tr,
               hint: International.password.tr,
               controller: controller.passController,
@@ -105,7 +99,7 @@ class LoginView extends GetView<LoginController> {
             ),
           ),
           const SizedBox(height: 20),
-          SkyButton(
+          BaseButton(
             onPressed: () {
               FocusScope.of(context).unfocus();
               controller.login();
@@ -122,7 +116,7 @@ class LoginView extends GetView<LoginController> {
   _buildFooter(BuildContext context) {
     return Column(
       children: [
-        SkyButton(
+        BaseButton(
           onPressed: () => controller.bypassLogin(),
           text: International.skip.tr,
           icon: Icons.arrow_forward,
@@ -137,8 +131,7 @@ class LoginView extends GetView<LoginController> {
               child: Text(
                 International.reset.tr,
                 style: const TextStyle(
-                    color: AppColors.primary,
-                    fontWeight: FontWeight.bold),
+                    color: AppColors.primary, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -152,8 +145,7 @@ class LoginView extends GetView<LoginController> {
               child: Text(
                 International.register.tr,
                 style: const TextStyle(
-                    color: AppColors.primary,
-                    fontWeight: FontWeight.bold),
+                    color: AppColors.primary, fontWeight: FontWeight.bold),
               ),
             ),
           ],

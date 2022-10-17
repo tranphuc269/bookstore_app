@@ -1,32 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
 class AppStyle {
-  static TextStyle title1 = const TextStyle(fontSize: 40);
-  static TextStyle title2 = const TextStyle(fontSize: 34);
-  static TextStyle title3 = const TextStyle(fontSize: 30);
-  static TextStyle title4 = const TextStyle(fontSize: 28);
+  static final baseTextStyle = GoogleFonts.alatsi();
 
-  static TextStyle subtitle1 = const TextStyle(fontSize: 24);
-  static TextStyle subtitle2 = const TextStyle(fontSize: 20);
-  static TextStyle subtitle3 = const TextStyle(fontSize: 18);
-  static TextStyle subtitle4 = const TextStyle(fontSize: 16);
+  static TextStyle title40 = baseTextStyle.copyWith(fontSize: 40);
+  static TextStyle title34 = baseTextStyle.copyWith(fontSize: 34);
+  static TextStyle title30 = baseTextStyle.copyWith(fontSize: 30);
+  static TextStyle title28 = baseTextStyle.copyWith(fontSize: 28);
 
-  static TextStyle small = const TextStyle(fontSize: 13);
-  static TextStyle normalSmall = const TextStyle(fontSize: 11);
-  static TextStyle superSmall = const TextStyle(fontSize: 9);
+  static TextStyle subtitle24 = baseTextStyle.copyWith(fontSize: 24);
+  static TextStyle subtitle20 = baseTextStyle.copyWith(fontSize: 20);
+  static TextStyle subtitle18 = baseTextStyle.copyWith(fontSize: 18);
+  static TextStyle subtitle16 = baseTextStyle.copyWith(fontSize: 16);
 
-  static TextStyle headline1 = const TextStyle(
+  static TextStyle subtitle14 = baseTextStyle.copyWith(fontSize: 14);
+  static TextStyle normalSmall = baseTextStyle.copyWith(fontSize: 12);
+  static TextStyle superSmall = baseTextStyle.copyWith(fontSize: 8);
+
+  static TextStyle headline1 = baseTextStyle.copyWith(
       fontSize: 34, fontWeight: FontWeight.w800, color: AppColors.primary);
-  static TextStyle headline2 = const TextStyle(
+  static TextStyle headline2 = baseTextStyle.copyWith(
       fontSize: 26, fontWeight: FontWeight.w800, color: AppColors.primary);
-  static TextStyle headline3 = const TextStyle(
+  static TextStyle headline3 = baseTextStyle.copyWith(
       fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.primary);
-  static TextStyle headline4 = const TextStyle(
+  static TextStyle headline4 = baseTextStyle.copyWith(
       fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.primary);
 
-  static TextStyle link = const TextStyle(fontSize: 18, color: Colors.blue);
+  static TextStyle link =
+      baseTextStyle.copyWith(fontSize: 18, color: Colors.blue);
 
   // Font Weight
   static FontWeight superBold = FontWeight.w600;

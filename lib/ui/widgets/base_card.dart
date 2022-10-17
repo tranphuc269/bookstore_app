@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SkyCard extends StatelessWidget {
+class BaseCard extends StatelessWidget {
 
-  const SkyCard({
+  const BaseCard({
     Key? key,
     this.borderColor,
     this.backgroundColor = Colors.white,

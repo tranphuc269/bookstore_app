@@ -9,47 +9,6 @@ part 'sample_feature.g.dart';
 
 @HiveType(typeId: HiveBox.userId, adapterName: HiveAdapters.PERSON)
 class SampleFeature {
-  @HiveField(UserEntity.id)
-  int id;
-
-  @HiveField(UserEntity.username)
-  String username;
-
-  @HiveField(UserEntity.name)
-  String? name;
-
-  @HiveField(UserEntity.location)
-  String? location;
-
-  @HiveField(UserEntity.company)
-  String? company;
-
-  @HiveField(UserEntity.gitUrl)
-  String? gitUrl;
-
-  @HiveField(UserEntity.bio)
-  String? bio;
-
-  @HiveField(UserEntity.avatarUrl)
-  String? avatarUrl;
-
-  @HiveField(UserEntity.repository)
-  int? repository;
-
-  @HiveField(UserEntity.followers)
-  int? followers;
-
-  @HiveField(UserEntity.following)
-  int? following;
-
-  @HiveField(UserEntity.repositoryList)
-  List<Repo>? repositoryList;
-
-  @HiveField(UserEntity.followersList)
-  List<SampleFeature>? followersList;
-
-  @HiveField(UserEntity.followingList)
-  List<SampleFeature>? followingList;
 
 
   SampleFeature({
@@ -95,6 +54,47 @@ class SampleFeature {
       // refreshToken: json['refresh_token'],
     );
   }
+  @HiveField(UserEntity.id)
+  int id;
+
+  @HiveField(UserEntity.username)
+  String username;
+
+  @HiveField(UserEntity.name)
+  String? name;
+
+  @HiveField(UserEntity.location)
+  String? location;
+
+  @HiveField(UserEntity.company)
+  String? company;
+
+  @HiveField(UserEntity.gitUrl)
+  String? gitUrl;
+
+  @HiveField(UserEntity.bio)
+  String? bio;
+
+  @HiveField(UserEntity.avatarUrl)
+  String? avatarUrl;
+
+  @HiveField(UserEntity.repository)
+  int? repository;
+
+  @HiveField(UserEntity.followers)
+  int? followers;
+
+  @HiveField(UserEntity.following)
+  int? following;
+
+  @HiveField(UserEntity.repositoryList)
+  List<Repo>? repositoryList;
+
+  @HiveField(UserEntity.followersList)
+  List<SampleFeature>? followersList;
+
+  @HiveField(UserEntity.followingList)
+  List<SampleFeature>? followingList;
 
   Map<String, dynamic> toJson() => {
     'id': id,

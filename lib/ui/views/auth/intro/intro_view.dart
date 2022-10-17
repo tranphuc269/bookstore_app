@@ -18,7 +18,7 @@ class IntroView extends StatelessWidget {
     const bodyStyle = TextStyle(fontSize: 19);
 
     final pageDecoration = PageDecoration(
-      titleTextStyle: AppStyle.subtitle4
+      titleTextStyle: AppStyle.subtitle16
           .copyWith(fontSize: 26, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       descriptionPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
@@ -28,45 +28,45 @@ class IntroView extends StatelessWidget {
     return IntroductionScreen(
       key: introKey,
       pages: [
-        PageViewModel(
-          title: 'Skybase',
-          image: _buildImage('img_pv_1.png'),
-          decoration: pageDecoration,
-          bodyWidget: Column(
-            children: [
-              const SizedBox(height: 12),
-              Text('Created by', style: AppStyle.subtitle4,),
-              Text('Varcant', style: AppStyle.subtitle3.copyWith(fontWeight: FontWeight.bold)),
-              Text('nanda.kista@gmail.com', style: TextStyle(fontWeight: AppStyle.semiBold)),
-            ],
-          ),
-        ),
-        PageViewModel(
-          title: 'Skybase',
-          image: _buildImage('img_pv_2.png'),
-          decoration: pageDecoration,
-          bodyWidget: Column(
-            children: [
-              const SizedBox(height: 12),
-              Text('Created by', style: AppStyle.subtitle4,),
-              Text('Varcant', style: AppStyle.subtitle3.copyWith(fontWeight: FontWeight.bold)),
-              Text('nanda.kista@gmail.com', style: TextStyle(fontWeight: AppStyle.semiBold)),
-            ],
-          ),
-        ),
-        PageViewModel(
-          title: 'Skybase',
-          image: _buildImage('img_pv_3.png'),
-          decoration: pageDecoration,
-          bodyWidget: Column(
-            children: [
-              const SizedBox(height: 12),
-              Text('Created by', style: AppStyle.subtitle4,),
-              Text('Varcant', style: AppStyle.subtitle3.copyWith(fontWeight: FontWeight.bold)),
-              Text('nanda.kista@gmail.com', style: TextStyle(fontWeight: AppStyle.semiBold)),
-            ],
-          ),
-        ),
+        // PageViewModel(
+        //   title: 'Skybase',
+        //   image: _buildImage('img_pv_1.png'),
+        //   decoration: pageDecoration,
+        //   bodyWidget: Column(
+        //     children: [
+        //       const SizedBox(height: 12),
+        //       Text('Created by', style: AppStyle.subtitle4,),
+        //       Text('Varcant', style: AppStyle.subtitle3.copyWith(fontWeight: FontWeight.bold)),
+        //       Text('nanda.kista@gmail.com', style: TextStyle(fontWeight: AppStyle.semiBold)),
+        //     ],
+        //   ),
+        // ),
+        // PageViewModel(
+        //   title: 'Skybase',
+        //   image: _buildImage('img_pv_2.png'),
+        //   decoration: pageDecoration,
+        //   bodyWidget: Column(
+        //     children: [
+        //       const SizedBox(height: 12),
+        //       Text('Created by', style: AppStyle.subtitle4,),
+        //       Text('Varcant', style: AppStyle.subtitle3.copyWith(fontWeight: FontWeight.bold)),
+        //       Text('nanda.kista@gmail.com', style: TextStyle(fontWeight: AppStyle.semiBold)),
+        //     ],
+        //   ),
+        // ),
+        // PageViewModel(
+        //   title: 'Skybase',
+        //   image: _buildImage('img_pv_3.png'),
+        //   decoration: pageDecoration,
+        //   bodyWidget: Column(
+        //     children: [
+        //       const SizedBox(height: 12),
+        //       Text('Created by', style: AppStyle.subtitle4,),
+        //       Text('Varcant', style: AppStyle.subtitle3.copyWith(fontWeight: FontWeight.bold)),
+        //       Text('nanda.kista@gmail.com', style: TextStyle(fontWeight: AppStyle.semiBold)),
+        //     ],
+        //   ),
+        // ),
       ],
       onDone: () => _onIntroEnd(context),
       onSkip: () => _onIntroEnd(context),
@@ -74,14 +74,14 @@ class IntroView extends StatelessWidget {
       skipFlex: 0,
       nextFlex: 0,
       skip: Text(International.skip.tr,
-          style: AppStyle.subtitle4
+          style: AppStyle.subtitle16
               .copyWith(color: AppColors.primary, fontWeight: FontWeight.bold)),
       next: const Icon(
         Icons.arrow_forward,
         color: AppColors.primary,
       ),
       done: Text(International.done.tr,
-          style: AppStyle.subtitle4.copyWith(fontWeight: FontWeight.w600)),
+          style: AppStyle.subtitle16.copyWith(fontWeight: FontWeight.w600)),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: const EdgeInsets.fromLTRB(8, 4, 8, 4),

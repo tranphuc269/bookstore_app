@@ -46,7 +46,7 @@ class ErrorView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 24),
-            SkyButton(
+            BaseButton(
               wrapContent: true,
               height: 50,
               padding: const EdgeInsets.symmetric(horizontal: 20),

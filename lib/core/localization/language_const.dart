@@ -48,4 +48,16 @@ class International {
   static const String maxItem = 'txt_max_item';
   static const String emptyListTitle = 'txt_empty_list_title';
   static const String emptyListSubtitle = 'txt_empty_list_subtitle';
+
+  ///
+  static const String homeDiscovery = 'txt_home_discovery';
+
+  static const String all = 'txt_all';
+  static const String bookOfTheWeeks = 'txt_book_of_the_weeks';
+  static const String recommendations = 'txt_recommendations';
+  static const String novelties = 'txt_novelties';
+  static const String popular = 'txt_popular';
+  static const String youWatched = 'txt_you_watched';
+  static const String category = 'txt_category';
+  static const String producer = 'txt_producer';
 }

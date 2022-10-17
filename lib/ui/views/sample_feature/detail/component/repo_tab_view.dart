@@ -31,7 +31,7 @@ class RepoTabView extends GetView<SampleFeatureDetailController> {
                 url: '${repos.owner.avatarUrl}&s=200',
               ),
             ),
-            title: Text(repos.name.toString(), style: AppStyle.small),
+            title: Text(repos.name.toString(), style: AppStyle.normalSmall),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

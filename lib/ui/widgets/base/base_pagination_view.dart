@@ -11,8 +11,8 @@ typedef ItemWidgetBuilder<ItemType> = Widget Function(
   int index,
 );
 
-class SkyPaginationView<ItemType> extends StatelessWidget {
-  const SkyPaginationView({
+class BasePaginationView<ItemType> extends StatelessWidget {
+  const BasePaginationView({
     required this.pagingController,
     required this.itemBuilder,
     required this.onRefresh,

@@ -4,8 +4,8 @@ import '../list_pagination/error_view.dart';
 import '../list_pagination/list_empty_view.dart';
 import '../shimmer_list.dart';
 
-class SkyListView extends StatelessWidget {
-  const SkyListView({
+class BaseListView extends StatelessWidget {
+  const BaseListView({
     required this.emptyEnabled,
     required this.loadingEnabled,
     required this.errorEnabled,
