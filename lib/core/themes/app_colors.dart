@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 class AppColors {
   // General
   static const Color primary = Color(0xff009cc6);
+  static const Color white = Color(0xFFFFFFFF);
   static const Color primaryVariant = Color(0xffbfedff);
   static const Color onPrimary = Color(0xff009cc6);
   static const Color secondary = Color(0xff70cde5);

@@ -8,9 +8,9 @@ import '../../core/themes/app_style.dart';
 class BaseButton extends StatelessWidget {
 
   const BaseButton({
-    Key? key,
     required this.text,
     required this.onPressed,
+    Key? key,
     this.icon,
     this.color = AppColors.primary,
     this.iconColor = Colors.white,
@@ -122,3 +122,4 @@ class BaseButton extends StatelessWidget {
     );
   }
 }
+

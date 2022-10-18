@@ -60,4 +60,7 @@ const Map<String, String> en = {
   International.youWatched: 'You Watched',
   International.category: 'Category',
   International.producer: 'Producer',
+  International.specifications: 'Specifications',
+  International.reviews: 'Reviews',
+  International.related: 'Related',
 };

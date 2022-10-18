@@ -31,13 +31,13 @@ class BaseView extends StatelessWidget {
         child: loadingEnabled
             ? loadingView ?? const ShimmerDetail()
             : errorEnabled
-            ? errorView ??
-            ErrorView(
-              isScrollable: false,
-              errorSubtitle: errorMsg,
-              onRetry: onRetry,
-            )
-            : child,
+                ? errorView ??
+                    ErrorView(
+                      isScrollable: false,
+                      errorSubtitle: errorMsg,
+                      onRetry: onRetry,
+                    )
+                : child,
       ),
     );
   }

@@ -60,4 +60,7 @@ class International {
   static const String youWatched = 'txt_you_watched';
   static const String category = 'txt_category';
   static const String producer = 'txt_producer';
+  static const String specifications = 'txt_specifications';
+  static const String reviews = 'txt_review';
+  static const String related = 'txt_related';
 }

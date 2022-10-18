@@ -9,6 +9,8 @@ class AppConst {
 
   static const double defaultSmallMargin = 8;
 
+  static const double defaultVerySmallMargin = 4;
+
   /* Size Helper
   ... Size of everything
    */
@@ -21,6 +23,7 @@ class AppConst {
   static double contentHeight = safeAreaHeight - kToolbarHeight;
 
 
+  static EdgeInsetsGeometry kPaddingLargeDefaultHorizontal = const EdgeInsets.symmetric(horizontal: 32);
   static EdgeInsetsGeometry kPaddingMediumDefaultHorizontal = const EdgeInsets.symmetric(horizontal: 16);
   static EdgeInsetsGeometry kPaddingMediumDefaultVertical = const EdgeInsets.symmetric(vertical: 16);
   static EdgeInsetsGeometry kPaddingMediumDefault = const EdgeInsets.all(16);
