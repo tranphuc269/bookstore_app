@@ -7,7 +7,7 @@ import '../../../../../core/themes/app_style.dart';
 import '../../../../../data/dummy/product_dummy.dart';
 import '../../../../widgets/product/product_widget.dart';
 
-class ProductDetailRelated extends StatelessWidget{
+class ProductDetailRelated extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -31,17 +31,22 @@ class ProductDetailRelated extends StatelessWidget{
           Padding(
             padding: const EdgeInsets.only(top: AppConst.defaultMediumMargin),
             child: SizedBox(
-              height: 260,
-              child: ListView(
+              height: 267,
+              child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                children: List.generate(
-                  ProductDummy.products.length,
-                      (index) {
-                    return PreviewVerticalProductWidget(
-                      image: ProductDummy.products[index],
-                    );
-                  },
-                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return PreviewVerticalProductWidget(
+                    image: ProductDummy.products[index],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    width: index == ProductDummy.products.length - 1
+                        ? 0
+                        : AppConst.defaultMediumMargin,
+                  );
+                },
+                itemCount: ProductDummy.products.length,
               ),
             ),
           )

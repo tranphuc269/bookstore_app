@@ -41,25 +41,50 @@ class HomeListBookHorizontal extends StatelessWidget {
             padding: const EdgeInsets.only(top: AppConst.defaultMediumMargin),
             child: SizedBox(
               height: heightList,
-              child: ListView(
+              // child: ListView(
+              //   scrollDirection: Axis.horizontal,
+              //   children: List.generate(
+              //     ProductDummy.products.length,
+              //     (index) {
+              //       switch (previewType) {
+              //         case PreviewEnum.VERTICAL:
+              //           // TODO: Handle this case.
+              //           return PreviewVerticalProductWidget(
+              //             image: ProductDummy.products[index],
+              //           );
+              //         case PreviewEnum.STACK:
+              //           // TODO: Handle this case.
+              //           return PreviewStackProductWidget(
+              //             image: ProductDummy.products[index],
+              //           );
+              //       }
+              //     },
+              //   ),
+              // ),
+              child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                children: List.generate(
-                  ProductDummy.products.length,
-                  (index) {
-                    switch (previewType) {
-                      case PreviewEnum.VERTICAL:
-                        // TODO: Handle this case.
-                        return PreviewVerticalProductWidget(
-                          image: ProductDummy.products[index],
-                        );
-                      case PreviewEnum.STACK:
-                        // TODO: Handle this case.
-                        return PreviewStackProductWidget(
-                          image: ProductDummy.products[index],
-                        );
-                    }
-                  },
-                ),
+                itemBuilder: (BuildContext context, int index) {
+                  switch (previewType) {
+                    case PreviewEnum.VERTICAL:
+                    // TODO: Handle this case.
+                      return PreviewVerticalProductWidget(
+                        image: ProductDummy.products[index],
+                      );
+                    case PreviewEnum.STACK:
+                    // TODO: Handle this case.
+                      return PreviewStackProductWidget(
+                        image: ProductDummy.products[index],
+                      );
+                  }
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    width: index == ProductDummy.products.length - 1
+                        ? 0
+                        : AppConst.defaultMediumMargin,
+                  );
+                },
+                itemCount: ProductDummy.products.length,
               ),
             ),
           )

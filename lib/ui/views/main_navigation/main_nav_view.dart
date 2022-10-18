@@ -26,7 +26,7 @@ class MainNavView extends GetView<MainNavController> {
             child: PageView(
               controller: controller.pageController,
               onPageChanged: (index) => controller.index.value = index,
-              children: const [
+              children: [
                 HomeView(),
                 CategoryView(),
                 LoginView(),

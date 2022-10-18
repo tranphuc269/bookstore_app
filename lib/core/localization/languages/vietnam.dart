@@ -62,4 +62,5 @@ const Map<String, String> vi = {
   International.specifications: 'Thông số kỹ thuật',
   International.reviews: 'Đánh giá',
   International.related: 'Liên quan',
+  International.categories: 'Danh mục',
 };

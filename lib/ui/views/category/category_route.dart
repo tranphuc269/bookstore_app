@@ -6,7 +6,7 @@ import 'category_view.dart';
 final categoryRoute = [
   GetPage(
     name: CategoryView.route,
-    page: () => const CategoryView(),
+    page: () => CategoryView(),
     binding: CategoryBinding(),
     participatesInRootNavigator: true,
   ),

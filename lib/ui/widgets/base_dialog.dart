@@ -78,8 +78,8 @@ class LoadingDialog extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Loading',
-              style: AppStyle.subtitle24.copyWith(color: Colors.white),
+              'Đang tải',
+              style: AppStyle.subtitle18.copyWith(color: Colors.white),
             ),
             const SizedBox(width: 4),
             const SpinKitThreeBounce(color: Colors.white, size: 16),

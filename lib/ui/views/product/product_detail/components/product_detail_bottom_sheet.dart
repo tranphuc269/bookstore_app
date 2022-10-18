@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/app/app_constant.dart';
+import '../../../../../core/helper/dialog_helper.dart';
 import '../../../../widgets/base_button.dart';
 
 class ProductDetailBottomSheet extends StatelessWidget {
@@ -12,7 +13,9 @@ class ProductDetailBottomSheet extends StatelessWidget {
       child: BaseButton(
         borderRadius: 24,
         text: 'Add To Cart',
-        onPressed: () {},
+        onPressed: () {
+          Loading.show(dismissible: true);
+        },
       ),
       height: 60,
       padding: AppConst.kPaddingLargeDefaultHorizontal,

@@ -18,24 +18,33 @@ class PreviewVerticalProductWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return GestureDetector(
-      child: Container(
-        margin: const EdgeInsets.only(right: AppConst.defaultMediumMargin),
+      child: SizedBox(
+        // margin: const EdgeInsets.only(right: AppConst.defaultMediumMargin),
         width: 140,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CachedImage(
               url: image,
               borderRadius: BorderRadius.circular(16),
             ),
-            Text('Fahrenheit 451', style: AppStyle.subtitle14),
-            Text(
-              'Ray Bradbury',
-              style: AppStyle.normalSmall.copyWith(
-                color: const Color(0xFF323232).withOpacity(0.65),
+            const SizedBox(height: AppConst.defaultSmallMargin,),
+            Expanded(child: Padding(
+              padding: AppConst.kPaddingSmallDefaultHorizontal,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Fahrenheit 451', style: AppStyle.subtitle14),
+                  Text(
+                    'Ray Bradbury',
+                    style: AppStyle.normalSmall.copyWith(
+                      color: const Color(0xFF323232).withOpacity(0.65),
+                    ),
+                  ),
+                ],
               ),
-            ),
+            ))
           ],
         ),
       ),
@@ -54,13 +63,12 @@ class PreviewStackProductWidget extends StatelessWidget {
     final maxWidth = MediaQuery.of(context).size.width;
     // TODO: implement build
     return GestureDetector(
-      child: Container(
-        margin: const EdgeInsets.only(right: AppConst.defaultMediumMargin),
-        width: maxWidth * 0.8,
+      child: SizedBox(
+        width: maxWidth * 0.9,
         child: Stack(
           children: [
             Container(
-              width: maxWidth * 0.8,
+              width: maxWidth * 0.9,
               margin: const EdgeInsets.only(top: 30, bottom: 1, left: 4),
               padding: const EdgeInsets.only(left: 120, top: 16, bottom: 16),
               decoration: BoxDecoration(

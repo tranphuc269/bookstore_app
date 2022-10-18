@@ -89,6 +89,9 @@ dependencies:
   swipable_stack: ^2.0.0
   #display html
   flutter_widget_from_html: ^0.8.5
+  lifecycle: ^0.6.0
+#  connectivity_plus: ^3.0.0
+  logger: ^1.1.0
 
 dev_dependencies:
   flutter_test:

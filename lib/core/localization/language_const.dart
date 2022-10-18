@@ -63,4 +63,5 @@ class International {
   static const String specifications = 'txt_specifications';
   static const String reviews = 'txt_review';
   static const String related = 'txt_related';
+  static const String categories = 'txt_categories';
 }
