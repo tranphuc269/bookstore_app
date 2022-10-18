@@ -257,10 +257,10 @@ class DialogAlert extends StatelessWidget {
                       const SizedBox(height: 32),
                       BaseButton(
                         text: confirmText,
-                        textColor: confirmTextColor ?? AppColors.onPrimary,
+                        textColor: confirmTextColor ?? AppColors.primary,
                         color: confirmBackgroundColor ?? Colors.white,
                         onPressed: onConfirm,
-                        borderColor: confirmBorderColor ?? AppColors.onPrimary,
+                        borderColor: confirmBorderColor ?? AppColors.primary,
                         fontWeight: AppStyle.semiBold,
                       ),
                       const SizedBox(height: 8),

@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/themes/app_colors.dart';
 import '../../widgets/colored_status_bar.dart';
 import '../../widgets/common_widget.dart';
 import '../auth/intro/intro_view.dart';
 import '../auth/login/login_view.dart';
+import '../category/category_view.dart';
 import '../home/home_view.dart';
 import '../sample_feature/list/sample_feature_list_view.dart';
 import '../utils/utils_view.dart';
@@ -26,7 +28,7 @@ class MainNavView extends GetView<MainNavController> {
               onPageChanged: (index) => controller.index.value = index,
               children: const [
                 HomeView(),
-                IntroView(),
+                CategoryView(),
                 LoginView(),
                 UtilsView(),
               ],
@@ -41,6 +43,7 @@ class MainNavView extends GetView<MainNavController> {
           showSelectedLabels: true,
           showUnselectedLabels: true,
           unselectedItemColor: Colors.grey,
+          selectedItemColor: AppColors.primary,
           onTap: (index) {
             controller.pageController.animateToPage(
               index,
@@ -51,11 +54,11 @@ class MainNavView extends GetView<MainNavController> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.home),
-              label: 'Users',
+              label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.book),
-              label: 'Intro',
+              label: 'Categories',
             ),
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.arrow_right_to_line),
