@@ -5,18 +5,15 @@ import '../../../../../core/localization/language_const.dart';
 import '../../../../../core/themes/app_colors.dart';
 import '../../../../../core/themes/app_style.dart';
 import '../../../../widgets/back_widget.dart';
+import '../product_list_controller.dart';
 
 class ProductListAppBar extends AppBar {
-  ProductListAppBar()
+  ProductListAppBar({required this.icon, required this.changeDisplay})
       : super(
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           leading: const BackWidget(),
           elevation: 0.2,
-          // title: Text(
-          //   '${International.recommendations.tr}',
-          //   style: AppStyle.subtitle20.copyWith(color: AppColors.baseDark),
-          // ),
           title: RichText(
             text: TextSpan(
               text: International.recommendations.tr,
@@ -32,13 +29,11 @@ class ProductListAppBar extends AppBar {
           ),
           actions: <Widget>[
             IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                // Icons.grid_view_outlined,
-                Icons.view_agenda_outlined,
-                color: AppColors.systemBlack,
-              ),
+              onPressed: changeDisplay,
+              icon: icon,
             ),
           ],
         );
+  Widget icon;
+  Function() changeDisplay;
 }

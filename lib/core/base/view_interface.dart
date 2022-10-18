@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../ui/widgets/colored_status_bar.dart';
 import '../themes/app_colors.dart';
