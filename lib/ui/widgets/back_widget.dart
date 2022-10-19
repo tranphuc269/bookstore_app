@@ -8,9 +8,17 @@ class BackWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return GestureDetector(
-      child: const Icon(CupertinoIcons.back, color: Colors.black, size: 24,),
-      onTap: (){
-        print('Navigator.of(context).pop()');
+      child: Container(
+        width: 24,
+        height: 24,
+        color: Colors.transparent,
+        child: const Icon(
+          CupertinoIcons.back,
+          color: Colors.black,
+          size: 24,
+        ),
+      ),
+      onTap: () {
         Navigator.of(context).pop();
       },
     );

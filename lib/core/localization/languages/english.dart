@@ -65,5 +65,5 @@ const Map<String, String> en = {
   International.related: 'Related',
   International.categories: 'Categories',
   International.userName: 'User Name',
-
+  International.returnShop: 'Return Shop',
 };

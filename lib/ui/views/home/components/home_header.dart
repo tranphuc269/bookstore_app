@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/localization/language_const.dart';
 import '../../../../core/themes/app_style.dart';
+import '../../cart/cart_view.dart';
 
 class HomeHeader extends StatelessWidget {
   @override
@@ -23,9 +24,14 @@ class HomeHeader extends StatelessWidget {
             International.homeDiscovery.tr,
             style: AppStyle.subtitle24,
           ),
-          Image.asset(
-            'assets/icons/ic_cart.png',
-            width: 24,
+          GestureDetector(
+            child: Image.asset(
+              'assets/icons/ic_cart.png',
+              width: 20,
+            ),
+            onTap: (){
+              Get.toNamed(CartView.route);
+            },
           ),
         ],
       ),

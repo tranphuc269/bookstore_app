@@ -25,6 +25,9 @@ class AppConst {
   /// The height of SafeArea - Toolbar or the height of content view
   static double contentHeight = safeAreaHeight - kToolbarHeight;
 
+  static EdgeInsetsGeometry kPaddingVeryLargeDefaultHorizontal =
+      const EdgeInsets.symmetric(horizontal: 80);
+
   static EdgeInsetsGeometry kPaddingLargeDefaultHorizontal =
       const EdgeInsets.symmetric(horizontal: 32);
   static EdgeInsetsGeometry kPaddingLargeDefaultVertical =
