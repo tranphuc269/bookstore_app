@@ -10,7 +10,7 @@ class MainNavBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => MainNavController());
-    Get.lazyPut(() => LoginController(dataSource: AuthApiImpl()));
+    // Get.lazyPut(() => LoginController(dataSource: AuthApiImpl()));
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => CategoryController());
   }

@@ -1,7 +1,7 @@
 import '../language_const.dart';
 
 const Map<String, String> en = {
-  International.name: 'name',
+  International.name: 'Full Name',
   International.email: 'Email',
   International.password: 'Password',
   International.home: 'Home',
@@ -38,6 +38,7 @@ const Map<String, String> en = {
   International.errEmpty: 'This is a required field.',
   International.loginSubtitle: 'Please enter your phone and password. ',
   International.dontHaveAccount: "Don't have account ? ",
+  International.haveAccount: 'You have account?',
   International.forgotPassword: 'Forgot Password ? ',
   International.emptyUser: 'Data users not found',
   International.errGeneralFormal: 'Something when wrong',
@@ -63,4 +64,6 @@ const Map<String, String> en = {
   International.reviews: 'Reviews',
   International.related: 'Related',
   International.categories: 'Categories',
+  International.userName: 'User Name',
+
 };

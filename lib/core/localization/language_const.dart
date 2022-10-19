@@ -15,6 +15,7 @@ class International {
   static const String retry = 'txt_retry';
   static const String register = 'txt_register';
   static const String phone = 'txt_phone';
+  static const String userName = 'txt_user_name';
   static const String reset = 'txt_reset';
   static const String login = 'txt_login';
   static const String done = 'txt_done';
@@ -43,6 +44,7 @@ class International {
   static const String forgotPassword = 'txt_forgot_password';
   static const String loginSubtitle = 'txt_login_subtitle';
   static const String dontHaveAccount = 'txt_dont_have_account';
+  static const String haveAccount = 'txt_have_account';
   static const String validSize = 'txt_valid_size';
   static const String tapRetry = 'txt_tap_to_retry';
   static const String maxItem = 'txt_max_item';

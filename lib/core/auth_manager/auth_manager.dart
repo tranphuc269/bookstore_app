@@ -40,10 +40,10 @@ class AuthManager extends GetxController {
   Future<void> onReady() async {
     // ever(authState, authChanged);
     // authChanged(state);
-    Timer(
-      const Duration(seconds: 2),
-          () => Get.offAllNamed(MainNavView.route),
-    );
+    // Timer(
+    //   const Duration(seconds: 2),
+    //       () => Get.offAllNamed(MainNavView.route),
+    // );
     super.onReady();
   }
 
