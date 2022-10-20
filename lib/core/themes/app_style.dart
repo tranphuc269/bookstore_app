@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppStyle {
-  static final baseTextStyle = GoogleFonts.alatsi();
+  static final baseTextStyle = GoogleFonts.mulish();
 
   static TextStyle title40 = baseTextStyle.copyWith(fontSize: 40);
   static TextStyle title34 = baseTextStyle.copyWith(fontSize: 34);

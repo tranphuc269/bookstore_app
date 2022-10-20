@@ -7,6 +7,8 @@ class AppConst {
   */
   static const double defaultMediumMargin = 16;
 
+  static const double defaultMediumMargin12 = 12;
+
   static const double defaultLargeMargin = 32;
 
   static const double defaultSmallMargin = 8;
