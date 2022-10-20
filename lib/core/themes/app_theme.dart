@@ -13,11 +13,11 @@ final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   bottomSheetTheme: const BottomSheetThemeData(
     elevation: 8,
-    backgroundColor: AppColors.primary,
+    backgroundColor: Color(0xFFf4eee4),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(24),
-        topRight: Radius.circular(24),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
       ),
     ),
   ),

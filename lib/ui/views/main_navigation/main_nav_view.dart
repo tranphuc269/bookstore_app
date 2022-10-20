@@ -65,8 +65,8 @@ class MainNavView extends GetView<MainNavController> {
               label: 'Login',
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.settings),
-              label: 'Utility',
+              icon: Icon(CupertinoIcons.person),
+              label: 'Profile',
             ),
           ],
         ),

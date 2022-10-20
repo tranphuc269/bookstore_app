@@ -23,6 +23,7 @@ class CategoryView extends StateLessViewBase<CategoryController> {
         loadingEnabled: controller.isLoading.isTrue,
         errorEnabled: controller.isError.value,
         onRetry: controller.onInit,
+        isConnectNetwork: controller.isConnectNetwork.value,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,

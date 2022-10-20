@@ -66,4 +66,5 @@ const Map<String, String> en = {
   International.categories: 'Categories',
   International.userName: 'User Name',
   International.returnShop: 'Return Shop',
+  International.payment: 'Payment',
 };

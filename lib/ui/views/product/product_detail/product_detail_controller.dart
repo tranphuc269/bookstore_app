@@ -5,6 +5,6 @@ class ProductDetailController extends BaseController{
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    // isError.value = true;
+    // isConnectNetwork.value = false;
   }
 }

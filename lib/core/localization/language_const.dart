@@ -67,4 +67,5 @@ class International {
   static const String related = 'txt_related';
   static const String categories = 'txt_categories';
   static const String returnShop = 'txt_return_shop';
+  static const String payment = 'txt_payment';
 }

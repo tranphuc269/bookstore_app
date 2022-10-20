@@ -23,6 +23,7 @@ class HomeView extends StateLessViewBase<HomeController> {
         loadingEnabled: controller.isLoading.isTrue,
         errorEnabled: controller.isError.value,
         onRetry: controller.onInit,
+        isConnectNetwork: controller.isConnectNetwork.value,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,

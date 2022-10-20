@@ -18,6 +18,7 @@ class ProductListView extends StateLessViewBase<ProductListController> {
       () => BaseView(
         loadingEnabled: controller.isLoading.isTrue,
         errorEnabled: controller.isError.value,
+        isConnectNetwork: controller.isConnectNetwork.value,
         onRetry: controller.onInit,
         child: SizedBox(
           width: MediaQuery.of(context).size.width,

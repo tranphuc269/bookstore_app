@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
-
 import '../../../core/app/app_constant.dart';
 import '../../../core/themes/app_style.dart';
 import '../../../data/dummy/product_dummy.dart';
+import '../../views/product/product_detail/product_detail_view.dart';
 import '../cached_image.dart';
 
 class CartItemWidget extends StatelessWidget {
@@ -16,9 +16,14 @@ class CartItemWidget extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: AppConst.defaultMediumMargin),
       child: Row(
         children: [
-          CachedImage(
-            url: ProductDummy.products[0],
-            borderRadius: BorderRadius.circular(8),
+          GestureDetector(
+            child: CachedImage(
+              url: ProductDummy.products[0],
+              borderRadius: BorderRadius.circular(8),
+            ),
+            onTap: (){
+              Get.toNamed(ProductDetailView.route);
+            },
           ),
           Padding(
             padding: AppConst.kPaddingMediumDefault,

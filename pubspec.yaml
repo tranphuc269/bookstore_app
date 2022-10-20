@@ -90,7 +90,7 @@ dependencies:
   #display html
   flutter_widget_from_html: ^0.8.5
   lifecycle: ^0.6.0
-#  connectivity_plus: ^3.0.0
+  connectivity_plus: ^3.0.0
   logger: ^1.1.0
   ionicons: ^0.2.1
 

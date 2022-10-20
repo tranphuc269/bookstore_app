@@ -25,6 +25,7 @@ class ProductDetailView extends StateLessViewBase<ProductDetailController> {
             loadingEnabled: controller.isLoading.isTrue,
             errorEnabled: controller.isError.value,
             onRetry: controller.onInit,
+            isConnectNetwork: controller.isConnectNetwork.value,
             child: Column(
               children: [
                 ProductDetailImages(),

@@ -27,6 +27,7 @@ class SampleFeatureDetailView extends GetView<SampleFeatureDetailController> {
             () => BaseView(
               loadingEnabled: controller.isLoading.isTrue,
               errorEnabled: controller.user.value == null,
+              isConnectNetwork: controller.isConnectNetwork.value,
               onRetry: () => controller.getDetailUser(),
               child: Column(
                 children: [

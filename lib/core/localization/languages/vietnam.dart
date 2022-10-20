@@ -66,4 +66,5 @@ const Map<String, String> vi = {
   International.categories: 'Danh mục',
   International.userName: 'Tên tài khoản',
   International.returnShop: 'Mua sắm',
+  International.payment: 'Thanh toán',
 };

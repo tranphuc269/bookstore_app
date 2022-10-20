@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../core/base/stateless_view_base.dart';
 import '../../widgets/base/base_view.dart';
 import 'cart_controller.dart';
-import 'components/cart_empty.dart';
 import 'components/cart_header.dart';
 import 'components/cart_item_list.dart';
 
@@ -19,6 +18,7 @@ class CartView extends StateLessViewBase<CartController> {
         loadingEnabled: controller.isLoading.isTrue,
         errorEnabled: controller.isError.value,
         onRetry: controller.onInit,
+        isConnectNetwork: controller.isConnectNetwork.value,
         child: CartItemList(),
       ),
     );
@@ -29,4 +29,7 @@ class CartView extends StateLessViewBase<CartController> {
     // TODO: implement buildAppBar
     return CartHeader();
   }
+
+
+
 }
