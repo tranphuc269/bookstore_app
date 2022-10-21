@@ -27,7 +27,7 @@ class HomeHeader extends StatelessWidget {
           GestureDetector(
             child: Image.asset(
               'assets/icons/ic_cart.png',
-              width: 20,
+              width: 24,
             ),
             onTap: (){
               Get.toNamed(CartView.route);

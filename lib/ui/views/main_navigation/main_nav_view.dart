@@ -9,6 +9,7 @@ import '../auth/intro/intro_view.dart';
 import '../auth/login/login_view.dart';
 import '../category/category_view.dart';
 import '../home/home_view.dart';
+import '../my_page/profile/profile_view.dart';
 import '../notification/notification_view.dart';
 import '../sample_feature/list/sample_feature_list_view.dart';
 import '../utils/utils_view.dart';
@@ -31,7 +32,7 @@ class MainNavView extends GetView<MainNavController> {
                 HomeView(),
                 CategoryView(),
                 NotificationView(),
-                UtilsView(),
+                ProfileView(),
               ],
             ),
           ),

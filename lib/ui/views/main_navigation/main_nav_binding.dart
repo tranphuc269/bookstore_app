@@ -3,6 +3,7 @@ import '../../../data/sources/server/auth/auth_api_impl.dart';
 import '../auth/login/login_controller.dart';
 import '../category/category_controller.dart';
 import '../home/home_controller.dart';
+import '../my_page/profile/profile_controller.dart';
 import '../notification/notification_controller.dart';
 import 'main_nav_controller.dart';
 
@@ -15,5 +16,6 @@ class MainNavBinding implements Bindings {
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => CategoryController());
     Get.lazyPut(() => NotificationController());
+    Get.lazyPut(() => ProfileController());
   }
 }
