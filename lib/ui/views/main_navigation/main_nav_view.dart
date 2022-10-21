@@ -9,6 +9,7 @@ import '../auth/intro/intro_view.dart';
 import '../auth/login/login_view.dart';
 import '../category/category_view.dart';
 import '../home/home_view.dart';
+import '../notification/notification_view.dart';
 import '../sample_feature/list/sample_feature_list_view.dart';
 import '../utils/utils_view.dart';
 import 'main_nav_controller.dart';
@@ -29,7 +30,7 @@ class MainNavView extends GetView<MainNavController> {
               children: [
                 HomeView(),
                 CategoryView(),
-                LoginView(),
+                NotificationView(),
                 UtilsView(),
               ],
             ),
@@ -61,8 +62,8 @@ class MainNavView extends GetView<MainNavController> {
               label: 'Categories',
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.arrow_right_to_line),
-              label: 'Login',
+              icon: Icon(CupertinoIcons.bell),
+              label: 'Notifications',
             ),
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.person),
