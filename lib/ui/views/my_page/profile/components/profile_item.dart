@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../../../core/app/app_constant.dart';
 import '../../../../widgets/profile/profile_item_widget.dart';
+import '../../order_history_list/order_history_list_view.dart';
 
 class ProfileItem extends StatelessWidget {
   @override
@@ -15,13 +16,17 @@ class ProfileItem extends StatelessWidget {
         children: [
           ProfileItemWidget(
             title: 'Edit profile',
-            onTab: () {},
+            onTab: () {
+
+            },
             imgSource: 'assets/icons/ic_edit_profile.png',
             icForward: true,
           ),
           ProfileItemWidget(
             title: 'Order History',
-            onTab: () {},
+            onTab: () {
+              Get.toNamed(OrderHistoryListView.route);
+            },
             imgSource: 'assets/icons/ic_order_history.png',
             icForward: true,
           ),

@@ -6,6 +6,7 @@ import '../views/cart/cart_route.dart';
 import '../views/home/home_route.dart';
 import '../views/main_navigation/main_nav_route.dart';
 import '../views/main_navigation/main_nav_view.dart';
+import '../views/my_page/my_page_route.dart';
 import '../views/notification/notification_route.dart';
 import '../views/payment/payment_route.dart';
 import '../views/product/product_detail/product_detail_route.dart';
@@ -30,5 +31,6 @@ class AppPages {
     ...cartRoute,
     ...paymentRoute,
     ...notificationRoute,
+    ...myPageRoute,
   ];
 }
