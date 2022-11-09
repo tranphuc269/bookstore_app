@@ -6,19 +6,19 @@ import 'app_colors.dart';
 class AppStyle {
   static final baseTextStyle = GoogleFonts.mulish();
 
-  static TextStyle title40 = baseTextStyle.copyWith(fontSize: 40);
-  static TextStyle title34 = baseTextStyle.copyWith(fontSize: 34);
-  static TextStyle title30 = baseTextStyle.copyWith(fontSize: 30);
-  static TextStyle title28 = baseTextStyle.copyWith(fontSize: 28);
+  static TextStyle title40 = baseTextStyle.copyWith(fontSize: 40, color: AppColors.systemBlack);
+  static TextStyle title34 = baseTextStyle.copyWith(fontSize: 34, color: AppColors.systemBlack);
+  static TextStyle title30 = baseTextStyle.copyWith(fontSize: 30, color: AppColors.systemBlack);
+  static TextStyle title28 = baseTextStyle.copyWith(fontSize: 28, color: AppColors.systemBlack);
 
-  static TextStyle subtitle24 = baseTextStyle.copyWith(fontSize: 24);
-  static TextStyle subtitle20 = baseTextStyle.copyWith(fontSize: 20);
-  static TextStyle subtitle18 = baseTextStyle.copyWith(fontSize: 18);
-  static TextStyle subtitle16 = baseTextStyle.copyWith(fontSize: 16);
+  static TextStyle subtitle24 = baseTextStyle.copyWith(fontSize: 24, color: AppColors.systemBlack);
+  static TextStyle subtitle20 = baseTextStyle.copyWith(fontSize: 20, color: AppColors.systemBlack);
+  static TextStyle subtitle18 = baseTextStyle.copyWith(fontSize: 18, color: AppColors.systemBlack);
+  static TextStyle subtitle16 = baseTextStyle.copyWith(fontSize: 16, color: AppColors.systemBlack);
 
-  static TextStyle subtitle14 = baseTextStyle.copyWith(fontSize: 14);
-  static TextStyle normalSmall = baseTextStyle.copyWith(fontSize: 12);
-  static TextStyle superSmall = baseTextStyle.copyWith(fontSize: 8);
+  static TextStyle subtitle14 = baseTextStyle.copyWith(fontSize: 14, color: AppColors.systemBlack);
+  static TextStyle normalSmall = baseTextStyle.copyWith(fontSize: 12, color: AppColors.systemBlack);
+  static TextStyle superSmall = baseTextStyle.copyWith(fontSize: 8, color: AppColors.systemBlack);
 
   static TextStyle headline1 = baseTextStyle.copyWith(
       fontSize: 34, fontWeight: FontWeight.w800, color: AppColors.primary);

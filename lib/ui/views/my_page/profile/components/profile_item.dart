@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../../core/app/app_constant.dart';
 import '../../../../widgets/profile/profile_item_widget.dart';
+import '../../../address/address_view.dart';
 import '../../order_history_list/order_history_list_view.dart';
 
 class ProfileItem extends StatelessWidget {
@@ -19,7 +20,7 @@ class ProfileItem extends StatelessWidget {
             onTab: () {
 
             },
-            imgSource: 'assets/icons/ic_edit_profile.png',
+            imgSource: 'assets/icons/ic_setting.png',
             icForward: true,
           ),
           ProfileItemWidget(
@@ -31,9 +32,35 @@ class ProfileItem extends StatelessWidget {
             icForward: true,
           ),
           ProfileItemWidget(
-            title: 'Edit Address',
-            onTab: () {},
+            title: 'Address',
+            onTab: () {
+              Get.toNamed(AddressView.route);
+            },
             imgSource: 'assets/icons/ic_address.png',
+            icForward: true,
+          ),
+          ProfileItemWidget(
+            title: 'Scanner',
+            onTab: () {},
+            imgSource: 'assets/icons/ic_scanner.png',
+            icForward: true,
+          ),
+          ProfileItemWidget(
+            title: 'Language',
+            onTab: () {},
+            imgSource: 'assets/icons/ic_language.png',
+            icForward: true,
+          ),
+          ProfileItemWidget(
+            title: 'About Us',
+            onTab: () {},
+            imgSource: 'assets/icons/ic_about_us.png',
+            icForward: true,
+          ),
+          ProfileItemWidget(
+            title: 'Help Center',
+            onTab: () {},
+            imgSource: 'assets/icons/ic_help.png',
             icForward: true,
           ),
           ProfileItemWidget(
@@ -42,6 +69,7 @@ class ProfileItem extends StatelessWidget {
             imgSource: 'assets/icons/ic_logout.png',
             icForward: false,
           ),
+
         ],
       ),
     );

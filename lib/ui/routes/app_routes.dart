@@ -1,3 +1,4 @@
+import '../views/address/address_route.dart';
 import '../views/auth/intro/intro_route.dart';
 import '../views/auth/login/login_route.dart';
 import '../views/auth/register/register_route.dart';
@@ -32,5 +33,6 @@ class AppPages {
     ...paymentRoute,
     ...notificationRoute,
     ...myPageRoute,
+    ...addressRoute,
   ];
 }

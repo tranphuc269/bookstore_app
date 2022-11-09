@@ -9,7 +9,7 @@ class ProfileUser extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      margin: const EdgeInsets.only(top: AppConst.defaultLargeMargin * 2),
+      margin: const EdgeInsets.only(top: AppConst.defaultLargeMargin),
       alignment: Alignment.center,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

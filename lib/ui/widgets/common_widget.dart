@@ -40,9 +40,9 @@ class DoubleBack extends StatelessWidget {
 
 class CircleIcon extends StatelessWidget {
   const CircleIcon({
+    required this.icon,
     Key? key,
     this.onPressed,
-    required this.icon,
     this.backgroundColor = Colors.black,
     this.size = 56,
     this.splashColor = Colors.grey,

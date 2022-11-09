@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/themes/app_colors.dart';
+import '../../../core/themes/app_style.dart';
+import '../back_widget.dart';
+
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar({
     Key? key,
@@ -39,4 +43,17 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(height ?? kToolbarHeight);
+}
+
+class AppBarTitle extends AppBar {
+  AppBarTitle({required String title})
+      : super(
+          leading: const BackWidget(),
+          backgroundColor: AppColors.white,
+          elevation: 0.5,
+          title: Text(
+            title,
+            style: AppStyle.subtitle20.copyWith(color: AppColors.primary),
+          ),
+        );
 }
