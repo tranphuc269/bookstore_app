@@ -13,7 +13,7 @@ import 'api_url.dart';
 enum RequestMethod { GET, POST, PATCH, PUT, DELETE }
 
 Map<String, String> headers = {
-  HttpHeaders.authorizationHeader: '',
+  HttpHeaders.authorizationHeader: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsid2ViIl0sInVzZXJfaWQiOiJ4Y3ZjdmJ2di1iYTVkLTRiOTItODViZS1kZmdkZmdkZmdkZmciLCJ1c2VyX25hbWUiOiJhZG1pbi5hZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2Njg5MzM0NTIsImF1dGhvcml0aWVzIjpbIlNUQU5EQVJEX1VTRVIiLCJBRE1JTl9VU0VSIl0sImp0aSI6Ii1RbVlWX2hYUThKMVh1b2pkaDF5NFRheHpuYyIsImNsaWVudF9pZCI6IjkzZWQ0NTNlLWI3YWMtNDE5Mi1hNmQ0LWM0NWZhZTBkOTlhYyJ9.kIHixGZtoiM8zi7k_ahHUONJNYMbcs3PuSfe17hGOdyhcwoHfYjYwWeXtr017Vn-D-ldN2PURgnXM-a1h5CRrvAez3-WBkyq46wPE987tDy7YVkXazd5JUI9Z8rt7yGvT9RDPbgRa8GbtJPycbrE8Bo2OgWh5YP5-9UExB1OoQauv1vSa6j9T8CPfsyXX_G0dy37o7l-beIP_5IqTUArweb0A5INNPjJr3YQJ12XkDOvwpQnVxhHwGGoyk23_oPdBy7g53hi1G5UglmX2_KLEZFbnWSp6JucwT7KWlvJYPmHt1Fq8IYjLV2pWrfLZZLcxnRcFCr8_enmV8UdX2yZlQ',
 };
 
 /// Base Request for calling API.
@@ -38,6 +38,7 @@ Future<Response> sendRequest({
           ),
         );
       case RequestMethod.GET:
+        print('headers : $headers');
         return await _safeFetch(
           () => dioClient.get(
             url,
@@ -91,22 +92,17 @@ Future<void> _tokenManager(bool useToken) async {
   DioClient.setInterceptor();
   String? token = await SecureStorageManager.find.getToken();
   if (useToken) {
-    headers[HttpHeaders.authorizationHeader] = 'token $token';
+    headers[HttpHeaders.authorizationHeader] = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsid2ViIl0sInVzZXJfaWQiOiJ4Y3ZjdmJ2di1iYTVkLTRiOTItODViZS1kZmdkZmdkZmdkZmciLCJ1c2VyX25hbWUiOiJhZG1pbi5hZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2Njg5MzM0NTIsImF1dGhvcml0aWVzIjpbIlNUQU5EQVJEX1VTRVIiLCJBRE1JTl9VU0VSIl0sImp0aSI6Ii1RbVlWX2hYUThKMVh1b2pkaDF5NFRheHpuYyIsImNsaWVudF9pZCI6IjkzZWQ0NTNlLWI3YWMtNDE5Mi1hNmQ0LWM0NWZhZTBkOTlhYyJ9.kIHixGZtoiM8zi7k_ahHUONJNYMbcs3PuSfe17hGOdyhcwoHfYjYwWeXtr017Vn-D-ldN2PURgnXM-a1h5CRrvAez3-WBkyq46wPE987tDy7YVkXazd5JUI9Z8rt7yGvT9RDPbgRa8GbtJPycbrE8Bo2OgWh5YP5-9UExB1OoQauv1vSa6j9T8CPfsyXX_G0dy37o7l-beIP_5IqTUArweb0A5INNPjJr3YQJ12XkDOvwpQnVxhHwGGoyk23_oPdBy7g53hi1G5UglmX2_KLEZFbnWSp6JucwT7KWlvJYPmHt1Fq8IYjLV2pWrfLZZLcxnRcFCr8_enmV8UdX2yZlQ';
   } else {
     headers.clear();
   }
+  headers[HttpHeaders.authorizationHeader] = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsid2ViIl0sInVzZXJfaWQiOiJ4Y3ZjdmJ2di1iYTVkLTRiOTItODViZS1kZmdkZmdkZmdkZmciLCJ1c2VyX25hbWUiOiJhZG1pbi5hZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2Njg5MzM0NTIsImF1dGhvcml0aWVzIjpbIlNUQU5EQVJEX1VTRVIiLCJBRE1JTl9VU0VSIl0sImp0aSI6Ii1RbVlWX2hYUThKMVh1b2pkaDF5NFRheHpuYyIsImNsaWVudF9pZCI6IjkzZWQ0NTNlLWI3YWMtNDE5Mi1hNmQ0LWM0NWZhZTBkOTlhYyJ9.kIHixGZtoiM8zi7k_ahHUONJNYMbcs3PuSfe17hGOdyhcwoHfYjYwWeXtr017Vn-D-ldN2PURgnXM-a1h5CRrvAez3-WBkyq46wPE987tDy7YVkXazd5JUI9Z8rt7yGvT9RDPbgRa8GbtJPycbrE8Bo2OgWh5YP5-9UExB1OoQauv1vSa6j9T8CPfsyXX_G0dy37o7l-beIP_5IqTUArweb0A5INNPjJr3YQJ12XkDOvwpQnVxhHwGGoyk23_oPdBy7g53hi1G5UglmX2_KLEZFbnWSp6JucwT7KWlvJYPmHt1Fq8IYjLV2pWrfLZZLcxnRcFCr8_enmV8UdX2yZlQ';
 }
 
 /// Wrap fetch request with try-catch
 /// & error handling
 Future<Response> _safeFetch(Future<Response> Function() tryFetch) async {
-  try {
-    final response = await tryFetch();
-    // return ApiResponse.fromJson(response.data);
-    return response;
-  } on DioError catch (e) {
-    throw NetworkException.getErrorException(e);
-  } catch (e) {
-    rethrow;
-  }
+  final response = await tryFetch();
+  // return ApiResponse.fromJson(response.data);
+  return response;
 }

@@ -9,18 +9,18 @@ class AppConfiguration {
   static const tokenType = TokenType.ACCESS_TOKEN;
 
   //-- Production
-  static const productionAPI = 'https://api.github.com';
-  static const productionSocket = 'https://api.github.com';
+  static const productionAPI = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
+  static const productionSocket = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
   static const midtransProductionKey = 'Some Key';
 
   //-- Staging
-  static const stagingAPI = 'https://api.github.com';
-  static const stagingSocket = 'https://api.github.com';
+  static const stagingAPI = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
+  static const stagingSocket = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
   static const midtransStagingKey = 'Some Key';
 
   //-- Development
-  static const developmentAPI = 'https://api.github.com';
-  static const developmentSocket = 'https://api.github.com';
+  static const developmentAPI = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
+  static const developmentSocket = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
   static const midtransDevKey = 'Some Key';
 
   //-- App Info

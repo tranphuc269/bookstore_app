@@ -1,5 +1,6 @@
 import 'core/app/app_env.dart';
 import 'core/app/app_info.dart';
+import 'data/sources/server/catalog/banner/banner_api_impl.dart';
 import 'initializer.dart';
 import 'ui/routes/app_routes.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,8 @@ import 'core/helper/general_function.dart';
 import 'core/network/api_config.dart';
 import 'core/themes/app_theme.dart';
 import 'core/themes/theme_manager.dart';
-
+import 'data/sources/server/catalog/banner/banner_api_impl.dart';
+import 'data/sources/server/catalog/category/category_service_impl.dart';
 
 class Initializer extends GetxService {
   static Future<void> init() async {
@@ -27,7 +29,6 @@ class Initializer extends GetxService {
   }
 
   static Future<void> _initConfig() async {
-
     // Database
     // * [Be Careful] Writing order can affects the algorithm
     await HiveDb.init();
@@ -56,5 +57,9 @@ class Initializer extends GetxService {
 
     // Checking user auth
     Get.put(AuthManager(), permanent: true);
+
+    // api service
+    Get.lazyPut(() => BannerServiceImpl());
+    Get.lazyPut(() => CategoryServiceImpl());
   }
 }

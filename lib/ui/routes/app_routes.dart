@@ -12,6 +12,7 @@ import '../views/notification/notification_route.dart';
 import '../views/payment/payment_route.dart';
 import '../views/product/product_detail/product_detail_route.dart';
 import '../views/product/product_list/product_list_route.dart';
+import '../views/qr_code_scanner/qr_code_scanner_route.dart';
 import '../views/sample_feature/detail/sample_feature_detail_route.dart';
 import '../views/sample_feature/list/sample_feature_list_route.dart';
 
@@ -34,5 +35,6 @@ class AppPages {
     ...notificationRoute,
     ...myPageRoute,
     ...addressRoute,
+    ...qrCodeRoute,
   ];
 }

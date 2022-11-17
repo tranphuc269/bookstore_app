@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../auto_hiden_keyboard.dart';
 import '../list_pagination/error_view.dart';
 import '../no_internet_widget.dart';
 import '../shimmer_detail.dart';
@@ -28,23 +29,25 @@ class BaseView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      onRefresh: () => Future.sync(onRetry),
-      child: SingleChildScrollView(
-        child: isConnectNetwork
-            ? (loadingEnabled
-                ? loadingView ?? const ShimmerDetail()
-                : errorEnabled
-                    ? errorView ??
-                        ErrorView(
-                          isScrollable: false,
-                          errorSubtitle: errorMsg,
-                          onRetry: onRetry,
-                        )
-                    : child)
-            : NoInternetWidget(
-                onPress: () => Future.sync(onRetry),
-              ),
+    return AutoHideKeyboard(
+      child: RefreshIndicator(
+        onRefresh: () => Future.sync(onRetry),
+        child: SingleChildScrollView(
+          child: isConnectNetwork
+              ? (loadingEnabled
+              ? loadingView ?? const ShimmerDetail()
+              : errorEnabled
+              ? errorView ??
+              ErrorView(
+                isScrollable: false,
+                errorSubtitle: errorMsg,
+                onRetry: onRetry,
+              )
+              : child)
+              : NoInternetWidget(
+            onPress: () => Future.sync(onRetry),
+          ),
+        ),
       ),
     );
   }

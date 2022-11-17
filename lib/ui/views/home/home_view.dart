@@ -29,13 +29,13 @@ class HomeView extends StateLessViewBase<HomeController> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             HomeHeader(),
-            HomeBanner(),
+            HomeBanner(banners: viewModel.banners,),
             HomeListBookHorizontal(
               title: International.bookOfTheWeeks.tr,
               heightList: 267,
               previewType: PreviewEnum.VERTICAL,
             ),
-            HomeCategory(),
+            HomeCategory(categories: viewModel.categories,),
             HomeListBookHorizontal(
               title: International.recommendations.tr,
               heightList: 267,

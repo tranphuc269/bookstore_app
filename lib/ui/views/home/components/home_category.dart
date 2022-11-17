@@ -4,10 +4,13 @@ import 'package:get/get.dart';
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/localization/language_const.dart';
 import '../../../../core/themes/app_style.dart';
-import '../../../../data/dummy/category_dummy.dart';
+import '../../../../data/models/response/catalog/category/category_data.dart';
 import '../../../widgets/category/preview_category_widget.dart';
 
 class HomeCategory extends StatelessWidget {
+  const HomeCategory({required this.categories});
+
+  final List<CategoryData> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +39,10 @@ class HomeCategory extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: List.generate(
-                  CategoryDummy.images.length,
-                  (index) => PreviewCategoryWidget(image: CategoryDummy.images[index],),
+                  categories.length,
+                  (index) => PreviewCategoryWidget(
+                    data: categories[index],
+                  ),
                 ),
               ),
             ),
