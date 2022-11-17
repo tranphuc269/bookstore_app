@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 
 import '../../../core/app/app_constant.dart';
 import '../../../core/themes/app_style.dart';
+import '../../../data/models/response/producer/producer_data.dart';
 import '../cached_image.dart';
 
-class PreviewProducerWidget extends StatelessWidget{
-  const PreviewProducerWidget({required this.image});
+class PreviewProducerWidget extends StatelessWidget {
+  const PreviewProducerWidget({required this.data});
 
-  final String image;
+  final ProducerData data;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class PreviewProducerWidget extends StatelessWidget{
             height: 160,
             width: MediaQuery.of(context).size.width * 0.8,
             child: CachedImage(
-              url: image,
+              url: data.img,
               borderRadius: BorderRadius.circular(16),
             ),
           ),
@@ -33,7 +34,7 @@ class PreviewProducerWidget extends StatelessWidget{
           Padding(
             padding: AppConst.kPaddingSmallDefaultHorizontal,
             child: Text(
-              'Kim Dong',
+              data.producerName,
               style: AppStyle.subtitle18,
               maxLines: 1,
             ),

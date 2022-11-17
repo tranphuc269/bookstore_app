@@ -5,9 +5,14 @@ import '../../../../core/app/app_constant.dart';
 import '../../../../core/localization/language_const.dart';
 import '../../../../core/themes/app_style.dart';
 import '../../../../data/dummy/producer_dummy.dart';
+import '../../../../data/models/response/producer/producer_data.dart';
 import '../../../widgets/preview_producer_widget/preview_producer_widget.dart';
 
-class HomeProducer extends StatelessWidget{
+class HomeProducer extends StatelessWidget {
+  const HomeProducer({required this.producer});
+
+  final List<ProducerData> producer;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -35,8 +40,10 @@ class HomeProducer extends StatelessWidget{
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: List.generate(
-                  ProducerDummy.images.length,
-                      (index) => PreviewProducerWidget(image: ProducerDummy.images[index],),
+                  producer.length,
+                  (index) => PreviewProducerWidget(
+                    data: producer[index],
+                  ),
                 ),
               ),
             ),

@@ -19,6 +19,7 @@ import 'core/themes/app_theme.dart';
 import 'core/themes/theme_manager.dart';
 import 'data/sources/server/catalog/banner/banner_api_impl.dart';
 import 'data/sources/server/catalog/category/category_service_impl.dart';
+import 'data/sources/server/catalog/producer/producer_service_impl.dart';
 
 class Initializer extends GetxService {
   static Future<void> init() async {
@@ -61,5 +62,6 @@ class Initializer extends GetxService {
     // api service
     Get.lazyPut(() => BannerServiceImpl());
     Get.lazyPut(() => CategoryServiceImpl());
+    Get.lazyPut(() => ProducerServiceImpl());
   }
 }

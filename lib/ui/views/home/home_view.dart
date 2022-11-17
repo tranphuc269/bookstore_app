@@ -46,7 +46,7 @@ class HomeView extends StateLessViewBase<HomeController> {
               heightList: 267,
               previewType: PreviewEnum.VERTICAL,
             ),
-            HomeProducer(),
+            HomeProducer(producer: viewModel.producers,),
             HomeListBookHorizontal(
               title: International.popular.tr,
               heightList: 160,
