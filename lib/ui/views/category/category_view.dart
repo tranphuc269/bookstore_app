@@ -33,9 +33,9 @@ class CategoryView extends StateLessViewBase<CategoryController> {
             ),
             CategoryBanner(),
             ...List.generate(
-              CategoryDummy.images.length,
+              viewModel.categories.length,
               (index) => CategoryWidget(
-                img: CategoryDummy.images[index],
+                category: viewModel.categories[index],
               ),
             )
           ],

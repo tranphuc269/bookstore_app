@@ -32,22 +32,22 @@ class ProductDetailRelated extends StatelessWidget {
             padding: const EdgeInsets.only(top: AppConst.defaultMediumMargin),
             child: SizedBox(
               height: 267,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
-                  return PreviewVerticalProductWidget(
-                    image: ProductDummy.products[index],
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(
-                    width: index == ProductDummy.products.length - 1
-                        ? 0
-                        : AppConst.defaultMediumMargin,
-                  );
-                },
-                itemCount: ProductDummy.products.length,
-              ),
+              // child: ListView.separated(
+              //   scrollDirection: Axis.horizontal,
+              //   itemBuilder: (BuildContext context, int index) {
+              //     return PreviewVerticalProductWidget(
+              //       image: ProductDummy.products[index],
+              //     );
+              //   },
+              //   separatorBuilder: (BuildContext context, int index) {
+              //     return SizedBox(
+              //       width: index == ProductDummy.products.length - 1
+              //           ? 0
+              //           : AppConst.defaultMediumMargin,
+              //     );
+              //   },
+              //   itemCount: ProductDummy.products.length,
+              // ),
             ),
           )
         ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../core/base/stateless_view_base.dart';
 import '../../../core/localization/language_const.dart';
 import '../../widgets/base/base_view.dart';
@@ -29,33 +28,44 @@ class HomeView extends StateLessViewBase<HomeController> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             HomeHeader(),
-            HomeBanner(banners: viewModel.banners,),
+            HomeBanner(
+              banners: viewModel.banners,
+            ),
             HomeListBookHorizontal(
               title: International.bookOfTheWeeks.tr,
               heightList: 267,
               previewType: PreviewEnum.VERTICAL,
+              products: viewModel.products,
             ),
-            HomeCategory(categories: viewModel.categories,),
+            HomeCategory(
+              categories: viewModel.categories,
+            ),
             HomeListBookHorizontal(
               title: International.recommendations.tr,
               heightList: 267,
               previewType: PreviewEnum.VERTICAL,
+              products: viewModel.products,
             ),
             HomeListBookHorizontal(
               title: International.novelties.tr,
               heightList: 267,
               previewType: PreviewEnum.VERTICAL,
+              products: viewModel.products,
             ),
-            HomeProducer(producer: viewModel.producers,),
+            HomeProducer(
+              producer: viewModel.producers,
+            ),
             HomeListBookHorizontal(
               title: International.popular.tr,
               heightList: 160,
               previewType: PreviewEnum.STACK,
+              products: viewModel.products,
             ),
             HomeListBookHorizontal(
               title: International.youWatched.tr,
               heightList: 267,
               previewType: PreviewEnum.VERTICAL,
+              products: viewModel.products,
             ),
           ],
         ),

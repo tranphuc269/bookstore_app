@@ -5,13 +5,14 @@ import '../../../core/app/app_constant.dart';
 import '../../../core/themes/app_colors.dart';
 import '../../../core/themes/app_shadows.dart';
 import '../../../core/themes/app_style.dart';
+import '../../../data/models/response/catalog/category/category_data.dart';
 import '../../views/product/product_list/product_list_view.dart';
 import '../cached_image.dart';
 
 class CategoryWidget extends StatelessWidget {
-  const CategoryWidget({required this.img});
+  const CategoryWidget({required this.category});
 
-  final String img;
+  final CategoryData category;
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +43,19 @@ class CategoryWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Truyện kinh dị',
+                        category.name,
                         style: AppStyle.subtitle18,
                       ),
-                      Text(
-                        '120 Sản phẩm',
-                        style: AppStyle.subtitle14.copyWith(
-                          color: const Color(0xFF323232).withOpacity(0.54),
+                      Padding(
+                        padding:
+                            const EdgeInsets.only(right: AppConst.defaultSmallMargin),
+                        child: Text(
+                          category.description,
+                          style: AppStyle.subtitle14.copyWith(
+                            color: const Color(0xFF323232).withOpacity(0.54),
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       Expanded(
@@ -74,7 +81,7 @@ class CategoryWidget extends StatelessWidget {
                   height: 120,
                   width: 120,
                   child: CachedImage(
-                    url: img,
+                    url: category.imgUrl,
                     borderRadius:
                         BorderRadius.circular(AppConst.defaultSmallMargin),
                   ),

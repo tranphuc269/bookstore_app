@@ -34,7 +34,9 @@ class PaymentView extends StateLessViewBase<PaymentController> {
               const SizedBox(
                 height: AppConst.defaultMediumMargin,
               ),
-              PaymentCart(),
+              PaymentCart(
+                cartItems: viewModel.cartData.value?.data ?? [],
+              ),
               const SizedBox(
                 height: AppConst.defaultMediumMargin,
               ),
@@ -48,7 +50,7 @@ class PaymentView extends StateLessViewBase<PaymentController> {
               ),
               BaseButton(
                 text: International.payment.tr,
-                onPressed: (){
+                onPressed: () {
                   Get.toNamed(PaymentSuccessView.route);
                 },
               ),
@@ -64,5 +66,4 @@ class PaymentView extends StateLessViewBase<PaymentController> {
     // TODO: implement buildAppBar
     return PaymentHeader();
   }
-
 }

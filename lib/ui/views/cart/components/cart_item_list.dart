@@ -3,12 +3,16 @@ import 'package:get/get.dart';
 
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/localization/language_const.dart';
-import '../../../../data/dummy/product_dummy.dart';
+import '../../../../data/models/response/catalog/product/cart/cart_item_data.dart';
 import '../../../widgets/base_button.dart';
 import '../../../widgets/cart/cart_item_widget.dart';
 import '../../payment/payment_view.dart';
 
 class CartItemList extends StatelessWidget {
+  const CartItemList({required this.cartItems});
+
+  final List<CartItemData> cartItems;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -17,8 +21,8 @@ class CartItemList extends StatelessWidget {
       child: Column(
         children: [
           ...List.generate(
-            ProductDummy.products.length,
-            (index) => CartItemWidget(),
+            cartItems.length,
+            (index) => CartItemWidget(cart: cartItems[index]),
           ),
           BaseButton(
             text: International.payment.tr,

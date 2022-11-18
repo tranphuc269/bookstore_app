@@ -26,27 +26,27 @@ class ProfileProductRecent extends StatelessWidget {
         ),
         SizedBox(
           height: 150,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) {
-              if (index == 0) {
-                return const SizedBox(
-                  height: AppConst.defaultMediumMargin,
-                );
-              }
-              return PreviewStackProductWidget(
-                image: ProductDummy.products[index - 1],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                width: index == ProductDummy.products.length - 1
-                    ? 0
-                    : AppConst.defaultMediumMargin,
-              );
-            },
-            itemCount: ProductDummy.products.length + 1,
-          ),
+          // child: ListView.separated(
+          //   scrollDirection: Axis.horizontal,
+          //   itemBuilder: (BuildContext context, int index) {
+          //     if (index == 0) {
+          //       return const SizedBox(
+          //         height: AppConst.defaultMediumMargin,
+          //       );
+          //     }
+          //     return PreviewStackProductWidget(
+          //       image: ProductDummy.products[index - 1],
+          //     );
+          //   },
+          //   separatorBuilder: (BuildContext context, int index) {
+          //     return SizedBox(
+          //       width: index == ProductDummy.products.length - 1
+          //           ? 0
+          //           : AppConst.defaultMediumMargin,
+          //     );
+          //   },
+          //   itemCount: ProductDummy.products.length + 1,
+          // ),
         )
       ],
     );

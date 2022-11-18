@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
+
 import '../../../core/app/app_constant.dart';
+import '../../../core/helper/extension/double_extension.dart';
 import '../../../core/themes/app_style.dart';
 import '../../../data/dummy/product_dummy.dart';
+import '../../../data/models/response/catalog/product/cart/cart_item_data.dart';
 import '../../views/product/product_detail/product_detail_view.dart';
 import '../cached_image.dart';
 
 class CartItemWidget extends StatelessWidget {
+  const CartItemWidget({required this.cart});
+
+  final CartItemData cart;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -21,7 +28,7 @@ class CartItemWidget extends StatelessWidget {
               url: ProductDummy.products[0],
               borderRadius: BorderRadius.circular(8),
             ),
-            onTap: (){
+            onTap: () {
               Get.toNamed(ProductDetailView.route);
             },
           ),
@@ -31,7 +38,7 @@ class CartItemWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Conan tập tập 11',
+                  cart.productName,
                   style: AppStyle.subtitle18.copyWith(
                     color: const Color(0xFF36596A),
                   ),
@@ -41,7 +48,7 @@ class CartItemWidget extends StatelessWidget {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: '30,000đ',
+                    text: cart.itemPrice.formatMoney(),
                     style: AppStyle.subtitle16
                         .copyWith(color: const Color(0xFFFF8236)),
                   ),
@@ -49,6 +56,7 @@ class CartItemWidget extends StatelessWidget {
               ],
             ),
           ),
+          const Spacer(),
           Container(
             padding: AppConst.kPaddingMediumDefaultVertical,
             width: 100,
@@ -71,20 +79,29 @@ class CartItemWidget extends StatelessWidget {
                       Expanded(
                         child: Container(
                           alignment: Alignment.center,
-                          child: const Icon(Ionicons.remove_outline, size: 18,),
+                          child: const Icon(
+                            Ionicons.remove_outline,
+                            size: 18,
+                          ),
                         ),
                         flex: 2,
                       ),
                       Expanded(
                         child: Container(
-                          child: Text('1', style: AppStyle.subtitle16,),
+                          child: Text(
+                            cart.quantity.toString(),
+                            style: AppStyle.subtitle16,
+                          ),
                           alignment: Alignment.center,
                         ),
                       ),
                       Expanded(
                         child: Container(
                           alignment: Alignment.center,
-                          child: const Icon(Ionicons.add_outline, size: 18,),
+                          child: const Icon(
+                            Ionicons.add_outline,
+                            size: 18,
+                          ),
                         ),
                         flex: 2,
                       ),

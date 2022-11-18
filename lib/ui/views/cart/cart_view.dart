@@ -19,7 +19,9 @@ class CartView extends StateLessViewBase<CartController> {
         errorEnabled: controller.isError.value,
         onRetry: controller.onInit,
         isConnectNetwork: controller.isConnectNetwork.value,
-        child: CartItemList(),
+        child: CartItemList(
+          cartItems: viewModel.cartData.value?.data ?? [],
+        ),
       ),
     );
   }
@@ -29,7 +31,4 @@ class CartView extends StateLessViewBase<CartController> {
     // TODO: implement buildAppBar
     return CartHeader();
   }
-
-
-
 }

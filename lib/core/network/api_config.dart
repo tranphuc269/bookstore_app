@@ -12,7 +12,7 @@ class DioClient {
     Dio _dio = Dio();
     _dio.options.baseUrl = baseURL;
     _dio.options.connectTimeout = 10 * 1000; //60s
-    _dio.options.receiveTimeout = 3 * 1000; //3s
+    _dio.options.receiveTimeout = 15 * 1000; //15s
     return _dio;
   }
 

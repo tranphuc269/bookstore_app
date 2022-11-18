@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ionicons/ionicons.dart';
 
 import '../../../core/app/app_constant.dart';
+import '../../../core/helper/extension/double_extension.dart';
 import '../../../core/themes/app_style.dart';
 import '../../../data/dummy/product_dummy.dart';
+import '../../../data/models/response/catalog/product/cart/cart_item_data.dart';
 import '../../views/product/product_detail/product_detail_view.dart';
 import '../cached_image.dart';
 
-class PaymentItemWidget extends StatelessWidget{
+class PaymentItemWidget extends StatelessWidget {
+  const PaymentItemWidget({required this.cart});
+
+  final CartItemData cart;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -22,18 +27,20 @@ class PaymentItemWidget extends StatelessWidget{
               url: ProductDummy.products[0],
               borderRadius: BorderRadius.circular(8),
             ),
-            onTap: (){
+            onTap: () {
               Get.toNamed(ProductDetailView.route);
             },
           ),
-          const SizedBox(width: AppConst.defaultMediumMargin,),
+          const SizedBox(
+            width: AppConst.defaultMediumMargin,
+          ),
           Padding(
             padding: const EdgeInsets.only(top: AppConst.defaultMediumMargin),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Conan tập tập 11',
+                  cart.productName,
                   style: AppStyle.subtitle18.copyWith(
                     color: const Color(0xFF36596A),
                   ),
@@ -52,7 +59,7 @@ class PaymentItemWidget extends StatelessWidget{
                 ),
                 RichText(
                   text: TextSpan(
-                    text: '30,000đ',
+                    text: cart.itemPrice.formatMoney(),
                     style: AppStyle.subtitle16
                         .copyWith(color: const Color(0xFFFF8236)),
                   ),
@@ -61,11 +68,10 @@ class PaymentItemWidget extends StatelessWidget{
                   height: AppConst.defaultSmallMargin,
                 ),
                 Text(
-                  'Số lượng : 1',
+                  'Số lượng : ${cart.quantity}',
                   style: AppStyle.subtitle14.copyWith(
-                    color: const Color(0xFF323232),
-                    fontWeight: FontWeight.bold
-                  ),
+                      color: const Color(0xFF323232),
+                      fontWeight: FontWeight.bold),
                 ),
               ],
             ),

@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/themes/app_style.dart';
-import '../../../../data/dummy/product_dummy.dart';
+import '../../../../data/models/response/catalog/product/cart/cart_item_data.dart';
 import '../../../widgets/payment/payment_item_widget.dart';
-import '../../../widgets/preview_producer_widget/preview_producer_widget.dart';
-import '../../../widgets/product/product_widget.dart';
 
 class PaymentCart extends StatelessWidget {
+  const PaymentCart({required this.cartItems});
+
+  final List<CartItemData> cartItems;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -39,10 +41,7 @@ class PaymentCart extends StatelessWidget {
               margin: AppConst.kPaddingMediumDefaultVertical,
               color: Colors.black26,
             ),
-            ...List.generate(
-                2,
-                (index) =>
-                    PaymentItemWidget()),
+            ...List.generate(cartItems.length, (index) => PaymentItemWidget(cart : cartItems[index])),
           ],
         ),
       ),

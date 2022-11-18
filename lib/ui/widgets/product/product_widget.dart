@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/app/app_constant.dart';
+import '../../../core/helper/extension/double_extension.dart';
+import '../../../core/themes/app_colors.dart';
 import '../../../core/themes/app_style.dart';
+import '../../../data/models/response/catalog/product/product_data.dart';
 import '../../views/product/product_detail/product_detail_view.dart';
 import '../cached_image.dart';
 
 enum PreviewEnum { VERTICAL, STACK }
 
 class PreviewVerticalProductWidget extends StatelessWidget {
-  const PreviewVerticalProductWidget({required this.image});
+  const PreviewVerticalProductWidget({required this.productData});
 
-  final String image;
+  final ProductData productData;
 
   @override
   Widget build(BuildContext context) {
@@ -26,25 +29,29 @@ class PreviewVerticalProductWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CachedImage(
-              url: image,
+              url: productData.images.first,
               borderRadius: BorderRadius.circular(16),
             ),
-            const SizedBox(height: AppConst.defaultSmallMargin,),
-            Expanded(child: Padding(
-              padding: AppConst.kPaddingSmallDefaultHorizontal,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Fahrenheit 451', style: AppStyle.subtitle14),
-                  Text(
-                    'Ray Bradbury',
-                    style: AppStyle.normalSmall.copyWith(
-                      color: const Color(0xFF323232).withOpacity(0.65),
+            const SizedBox(
+              height: AppConst.defaultSmallMargin,
+            ),
+            Expanded(
+              child: Padding(
+                padding: AppConst.kPaddingSmallDefaultHorizontal,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(productData.productName, style: AppStyle.subtitle14),
+                    Text(
+                      productData.price.formatMoney(),
+                      style: AppStyle.headline4.copyWith(
+                        color: AppColors.primary,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ))
+            ),
           ],
         ),
       ),
@@ -54,9 +61,9 @@ class PreviewVerticalProductWidget extends StatelessWidget {
 }
 
 class PreviewStackProductWidget extends StatelessWidget {
-  const PreviewStackProductWidget({required this.image});
+  const PreviewStackProductWidget({required this.productData});
 
-  final String image;
+  final ProductData productData;
 
   @override
   Widget build(BuildContext context) {
@@ -87,17 +94,18 @@ class PreviewStackProductWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Norse mythology',
+                    productData.productName,
                     style: AppStyle.subtitle16,
                   ),
                   Text(
-                    'Neil Gaiman',
-                    style: AppStyle.subtitle14.copyWith(
-                      color: const Color(0xFF323232).withOpacity(0.65),
+                    productData.price.formatMoney(),
+                    style: AppStyle.subtitle16.copyWith(
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
                   Text(
-                    'In Norse Mythology, Gaiman stays true to the myths in envisioning the major Norse... pantheon: Odin, the... highest of the high, wise, daring, and cunning; Thor, Odin’s son, incredibly strong yet not the wisest of gods; and Loki―son of a giant―blood brother to Odin and a trickster and unsurpassable manipulator.',
+                    productData.description,
                     style: AppStyle.normalSmall.copyWith(
                       color: const Color(0xFF323232).withOpacity(0.65),
                     ),
@@ -112,7 +120,7 @@ class PreviewStackProductWidget extends StatelessWidget {
                 child: SizedBox(
                   width: 100,
                   child: CachedImage(
-                    url: image,
+                    url: productData.images.first,
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),

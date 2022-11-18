@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
 
+import '../../../data/sources/server/catalog/cart/cart_service_impl.dart';
 import 'payment_controller.dart';
 
-class PaymentBinding extends Bindings{
+class PaymentBinding extends Bindings {
   @override
   void dependencies() {
     // TODO: implement dependencies
-    Get.lazyPut(() => PaymentController());
+    Get.lazyPut(
+        () => PaymentController(cartService: Get.find<CartServiceImpl>()));
   }
-
 }
