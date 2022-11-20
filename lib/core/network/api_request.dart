@@ -29,7 +29,7 @@ Future<Response> sendRequest({
   try {
     switch (requestMethod) {
       case RequestMethod.POST:
-        log('Request Body : ${FormData.fromMap(body as Map<String, dynamic>).fields}');
+        log('Request Body : ${_setBody(contentType: contentType, body: body)}');
         return await _safeFetch(
           () => dioClient.post(
             url,
@@ -79,7 +79,8 @@ Object? _setBody({
   required Object? body,
 }) {
   if (contentType == Headers.jsonContentType) {
-    body = jsonEncode(body);
+    // body = jsonEncode(body);
+    return body;
   } else if (contentType == Headers.formUrlEncodedContentType) {
     return body;
   } else if (contentType == ApiUrl.multipartFormData) {

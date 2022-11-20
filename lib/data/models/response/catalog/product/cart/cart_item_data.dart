@@ -12,6 +12,7 @@ class CartItemData {
   });
 
   factory CartItemData.fromJson(Map<String, dynamic> json) {
+    print('json : $json');
     return CartItemData(
       productName: json['productName'],
       productId: json['productId'],

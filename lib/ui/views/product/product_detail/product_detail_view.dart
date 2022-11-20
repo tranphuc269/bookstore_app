@@ -13,6 +13,7 @@ import 'components/product_detail_specifications.dart';
 import 'product_detail_controller.dart';
 
 class ProductDetailView extends StateLessViewBase<ProductDetailController> {
+
   static const route = '/product_detail';
 
   @override
@@ -28,8 +29,8 @@ class ProductDetailView extends StateLessViewBase<ProductDetailController> {
             isConnectNetwork: controller.isConnectNetwork.value,
             child: Column(
               children: [
-                ProductDetailImages(),
-                ProductDetailIntroduction(),
+                ProductDetailImages(images: viewModel.productData.images,),
+                ProductDetailIntroduction(productData: viewModel.productData,),
                 ProductDetailSpecifications(),
                 ProductDetailReview(),
                 ProductDetailRelated(),
@@ -41,10 +42,10 @@ class ProductDetailView extends StateLessViewBase<ProductDetailController> {
           ),
           Positioned.fill(
             child: Align(
-              child: ProductDetailBottomSheet(),
+              child: ProductDetailBottomSheet(addToCart: controller.addToCart,),
               alignment: Alignment.bottomCenter,
             ),
-          )
+          ),
         ],
       ),
     );

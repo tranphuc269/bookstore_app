@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:swipable_stack/swipable_stack.dart';
 import '../../../../../core/themes/app_colors.dart';
 import '../../../../../core/themes/app_shadows.dart';
-import '../../../../../data/dummy/product_dummy.dart';
 import '../../../../widgets/cached_image.dart';
 
 class ProductDetailImages extends StatelessWidget {
+  const ProductDetailImages({required this.images});
+
+  final List<String> images;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -21,16 +24,18 @@ class ProductDetailImages extends StatelessWidget {
         },
         stackClipBehaviour: Clip.none,
         onSwipeCompleted: (index, direction) {
-          if (kDebugMode) {
-          }
+          if (kDebugMode) {}
         },
         horizontalSwipeThreshold: 0.6,
         verticalSwipeThreshold: 0.6,
         builder: (context, properties) {
-          final itemIndex = properties.index % ProductDummy.products.length;
+          final itemIndex = properties.index % images.length;
           return Center(
             child: Container(
-              child: CachedImage(url: ProductDummy.products[itemIndex], borderRadius: BorderRadius.circular(12),),
+              child: CachedImage(
+                url: images[itemIndex],
+                borderRadius: BorderRadius.circular(12),
+              ),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColors.white,
@@ -39,8 +44,7 @@ class ProductDetailImages extends StatelessWidget {
                     AppShadows.shadow3,
                     AppShadows.shadow3,
                     AppShadows.shadow3,
-                  ]
-              ),
+                  ]),
             ),
           );
         },

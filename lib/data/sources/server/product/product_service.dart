@@ -12,4 +12,6 @@ abstract class ProductService {
     required int page,
     required int size,
   });
+
+  Future<ProductData> getSingleProduct({required String productId});
 }

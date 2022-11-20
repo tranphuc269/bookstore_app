@@ -189,9 +189,9 @@ class DialogAlert extends StatelessWidget {
     required String confirmText,
     required String description,
     required VoidCallback onConfirm,
+    required void Function() onCancel,
     Color? backgroundColorHeader,
     Widget? header,
-    required void Function() onCancel,
   }) =>
       DialogAlert(
         title: title,

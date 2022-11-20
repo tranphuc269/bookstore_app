@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../../../data/sources/server/product/product_service_impl.dart';
 import 'product_detail_controller.dart';
 
 class ProductDetailBinding extends Bindings {
@@ -7,8 +8,10 @@ class ProductDetailBinding extends Bindings {
   void dependencies() {
     // TODO: implement dependencies
     Get.lazyPut(
-      () => ProductDetailController(),
-      tag: Get.arguments ?? '',
+      () => ProductDetailController(
+          productId: Get.arguments,
+          productService: Get.find<ProductServiceImpl>()),
+      // tag: Get.arguments ?? '',
     );
   }
 }

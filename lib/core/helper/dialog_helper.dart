@@ -13,14 +13,14 @@ class Toast {
 
 //---------------<Loading Dialog>-----------------
 class Loading {
-  static show({bool? dismissible}) {
+  static Future show({bool? dismissible}) {
     return showDialog(
         barrierDismissible: dismissible ?? false,
         context: Get.context!,
         builder: (context) => const LoadingDialog());
   }
 
-  static hide() => Get.back();
+  static void hide() => Get.back();
 }
 
 //---------------<Custom Dialog>-----------------

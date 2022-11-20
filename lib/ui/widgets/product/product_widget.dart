@@ -55,7 +55,8 @@ class PreviewVerticalProductWidget extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () => Get.toNamed(ProductDetailView.route),
+      onTap: () => Get.toNamed(ProductDetailView.route,
+          arguments: productData.producerId),
     );
   }
 }
@@ -100,9 +101,7 @@ class PreviewStackProductWidget extends StatelessWidget {
                   Text(
                     productData.price.formatMoney(),
                     style: AppStyle.subtitle16.copyWith(
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.bold
-                    ),
+                        color: AppColors.primary, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     productData.description,
@@ -132,7 +131,8 @@ class PreviewStackProductWidget extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () => Get.toNamed(ProductDetailView.route),
+      onTap: () => Get.toNamed(ProductDetailView.route,
+          arguments: productData.productId),
     );
   }
 }

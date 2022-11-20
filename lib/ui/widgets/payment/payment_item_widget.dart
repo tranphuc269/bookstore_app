@@ -28,7 +28,7 @@ class PaymentItemWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             onTap: () {
-              Get.toNamed(ProductDetailView.route);
+              Get.toNamed(ProductDetailView.route, arguments: cart.productId);
             },
           ),
           const SizedBox(
