@@ -1,0 +1,43 @@
+name: Android CI/CD
+
+on:
+  push:
+    branches: [ build ]
+  pull_request:
+    branches: [ build ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install java 12.x
+        uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+
+      - name: setup cache
+        uses: actions/cache@v1
+        with:
+          path: /Users/runner/hostedtoolcache/flutter
+          key: ${{ runner.OS }}-flutter-install-cache
+
+      - name: install flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.3.3'
+          channel: 'stable'
+
+      - name: flutter dependencies install
+        run: flutter pub get
+
+      - name: build apk
+        run: flutter build apk
+
+      - name: Distribute android apk
+        run: |
+          curl --location --request POST 'https://deploygate.com/api/users/tranphuc269/apps' \
+          --header 'Authorization: token 3a45a771-7e57-490c-a8cb-9324985bd357' \
+          --form "file=@build/app/outputs/flutter-apk/app-release.apk" \
