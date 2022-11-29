@@ -21,7 +21,7 @@ class CachedImage extends StatelessWidget {
         imageUrl: url,
         placeholder: (context, url) => platformLoadingIndicator(),
         errorWidget: (context, url, error) => const Icon(Icons.error),
-        fit: BoxFit.cover,
+        fit: BoxFit.fitWidth,
         // width: size?.width,
         // height: size?.height,
       ),

@@ -28,9 +28,13 @@ class PreviewVerticalProductWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CachedImage(
-              url: productData.images.first,
-              borderRadius: BorderRadius.circular(16),
+            SizedBox(
+              width: 140,
+              height: 200,
+              child: CachedImage(
+                url: productData.images.first,
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
             const SizedBox(
               height: AppConst.defaultSmallMargin,
@@ -41,7 +45,12 @@ class PreviewVerticalProductWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(productData.productName, style: AppStyle.subtitle14),
+                    Text(
+                      productData.productName,
+                      style: AppStyle.subtitle14,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                     Text(
                       productData.price.formatMoney(),
                       style: AppStyle.headline4.copyWith(

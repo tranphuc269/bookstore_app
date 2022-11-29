@@ -44,7 +44,7 @@ class ProductServiceImpl extends ProductService {
   @override
   Future<ProductData> getSingleProduct({required String productId}) async {
     // TODO: implement getSingleProduct
-    final url = '/catalog-service/product/86fddfe6-775f-4ae5-af5b-89aa0d132fce';
+    final url = '/catalog-service/product/$productId';
     final _res = await sendRequest(
       url: url,
       requestMethod: RequestMethod.GET,
