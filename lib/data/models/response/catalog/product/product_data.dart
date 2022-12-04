@@ -1,18 +1,21 @@
 class ProductData {
-  ProductData({
-    required this.productId,
-    required this.producerName,
-    required this.producerId,
-    required this.description,
-    required this.price,
-    required this.images,
-    required this.availableItemCount,
-    required this.averageRating,
-    required this.categoryId,
-    required this.categoryName,
-    required this.noOfRatings,
-    required this.productName,
-  });
+  ProductData(
+      {required this.productId,
+      required this.producerName,
+      required this.producerId,
+      required this.description,
+      required this.price,
+      required this.images,
+      required this.availableItemCount,
+      required this.averageRating,
+      required this.categoryId,
+      required this.categoryName,
+      required this.noOfRatings,
+      required this.productName,
+      required this.author,
+      required this.dimension,
+      required this.pageCount,
+      required this.weight});
 
   factory ProductData.fromJson(Map<String, dynamic> json) {
     return ProductData(
@@ -28,6 +31,10 @@ class ProductData {
       categoryName: json['categoryName'],
       noOfRatings: json['noOfRatings'],
       productName: json['productName'],
+      author: json['author'],
+      dimension: json['dimension'],
+      weight: json['weight'],
+      pageCount: json['pageCount'],
     );
   }
 
@@ -42,5 +49,9 @@ class ProductData {
   int availableItemCount;
   double averageRating;
   int noOfRatings;
+  int? pageCount;
+  String? dimension;
+  String? author;
+  String? weight;
   List<String> images;
 }

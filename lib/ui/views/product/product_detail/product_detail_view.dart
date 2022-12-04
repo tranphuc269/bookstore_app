@@ -31,7 +31,7 @@ class ProductDetailView extends StateLessViewBase<ProductDetailController> {
               children: [
                 ProductDetailImages(images: viewModel.productData.images,),
                 ProductDetailIntroduction(productData: viewModel.productData,),
-                ProductDetailSpecifications(),
+                ProductDetailSpecifications(productData: viewModel.productData,),
                 ProductDetailReview(),
                 ProductDetailRelated(),
                 const SizedBox(

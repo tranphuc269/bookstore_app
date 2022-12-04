@@ -1,8 +1,8 @@
-import '../../../../core/network/api_request.dart';
-import '../../../models/response/catalog/product/cart/cart_added_request.dart';
-import '../../../models/response/catalog/product/cart/cart_added_response.dart';
-import '../../../models/response/catalog/product/product_data.dart';
-import '../../../models/response/catalog/product/product_response.dart';
+import '../../../../../core/network/api_request.dart';
+import '../../../../models/response/catalog/product/cart/cart_added_request.dart';
+import '../../../../models/response/catalog/product/cart/cart_added_response.dart';
+import '../../../../models/response/catalog/product/product_data.dart';
+import '../../../../models/response/catalog/product/product_response.dart';
 import 'product_service.dart';
 
 class ProductServiceImpl extends ProductService {
@@ -44,7 +44,7 @@ class ProductServiceImpl extends ProductService {
   @override
   Future<ProductData> getSingleProduct({required String productId}) async {
     // TODO: implement getSingleProduct
-    final url = '/catalog-service/product/86fddfe6-775f-4ae5-af5b-89aa0d132fce';
+    final url = '/catalog-service/product/$productId';
     final _res = await sendRequest(
       url: url,
       requestMethod: RequestMethod.GET,
@@ -52,6 +52,34 @@ class ProductServiceImpl extends ProductService {
     );
     final ProductSingleResponse product =
         ProductSingleResponse.fromJson(_res.data);
+    return product.data;
+  }
+
+  @override
+  Future<List<ProductData>> getProductByCategoryId(
+      {required String categoryId}) async {
+    // TODO: implement getProductByCategoryId
+    final url = '/catalog-service/products/category?categoryId=$categoryId';
+    final _res = await sendRequest(
+      url: url,
+      requestMethod: RequestMethod.GET,
+      useToken: true,
+    );
+    final ProductListResponse product = ProductListResponse.fromJson(_res.data);
+    return product.data;
+  }
+
+  @override
+  Future<List<ProductData>> getProductByProducerId(
+      {required String producerId}) async {
+    // TODO: implement getProductByProducerId
+    final url = '/catalog-service/products/category?producerId=$producerId';
+    final _res = await sendRequest(
+      url: url,
+      requestMethod: RequestMethod.GET,
+      useToken: true,
+    );
+    final ProductListResponse product = ProductListResponse.fromJson(_res.data);
     return product.data;
   }
 }

@@ -8,7 +8,7 @@ import '../../../data/models/response/producer/producer_data.dart';
 import '../../../data/sources/server/catalog/banner/banner_api.dart';
 import '../../../data/sources/server/catalog/category/category_service.dart';
 import '../../../data/sources/server/catalog/producer/producer_service.dart';
-import '../../../data/sources/server/product/product_service.dart';
+import '../../../data/sources/server/catalog/product/product_service.dart';
 
 class HomeController extends BaseController {
   HomeController(

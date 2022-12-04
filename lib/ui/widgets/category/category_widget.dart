@@ -6,13 +6,15 @@ import '../../../core/themes/app_colors.dart';
 import '../../../core/themes/app_shadows.dart';
 import '../../../core/themes/app_style.dart';
 import '../../../data/models/response/catalog/category/category_data.dart';
+import '../../views/product/product_list/product_list_controller.dart';
 import '../../views/product/product_list/product_list_view.dart';
 import '../cached_image.dart';
 
 class CategoryWidget extends StatelessWidget {
-  const CategoryWidget({required this.category});
+  const CategoryWidget({required this.category, required this.type});
 
   final CategoryData category;
+  final ProductListEnum type;
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +96,10 @@ class CategoryWidget extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Get.toNamed(ProductListView.route);
+        Get.toNamed(ProductListView.route, arguments: [
+          category.id,
+          type
+        ]);
       },
     );
   }

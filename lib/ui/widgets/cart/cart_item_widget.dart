@@ -23,24 +23,30 @@ class CartItemWidget extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: AppConst.defaultMediumMargin),
       child: Row(
         children: [
-          GestureDetector(
-            child: CachedImage(
-              url: ProductDummy.products[0],
-              borderRadius: BorderRadius.circular(8),
+          SizedBox(
+            width: 100,
+            child: GestureDetector(
+              child: CachedImage(
+                url: cart.images.first,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              onTap: () {
+                Get.toNamed(ProductDetailView.route, arguments: cart.productId);
+              },
             ),
-            onTap: () {
-              Get.toNamed(ProductDetailView.route, arguments: cart.productId);
-            },
           ),
           Padding(
             padding: AppConst.kPaddingMediumDefault,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  cart.productName,
-                  style: AppStyle.subtitle18.copyWith(
-                    color: const Color(0xFF36596A),
+                SizedBox(
+                  width: 120,
+                  child: Text(
+                    cart.productName,
+                    style: AppStyle.subtitle18.copyWith(
+                      color: const Color(0xFF36596A),
+                    ),
                   ),
                 ),
                 const SizedBox(

@@ -44,14 +44,15 @@ class PaymentView extends StateLessViewBase<PaymentController> {
               const SizedBox(
                 height: AppConst.defaultMediumMargin,
               ),
-              PaymentReceipt(),
+              PaymentReceipt(cart: viewModel.cartData.value!,),
               const SizedBox(
                 height: AppConst.defaultMediumMargin,
               ),
               BaseButton(
                 text: International.payment.tr,
                 onPressed: () {
-                  Get.toNamed(PaymentSuccessView.route);
+                  viewModel.onPayment();
+                  // Get.toNamed(PaymentSuccessView.route);
                 },
               ),
             ],

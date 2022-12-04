@@ -19,8 +19,8 @@ class AppConfiguration {
   static const midtransStagingKey = 'Some Key';
 
   //-- Development
-  static const developmentAPI = 'https://409b-2a09-bac0-23-00-815-b50.ap.ngrok.io';
-  static const developmentSocket = 'https://409b-2a09-bac0-23-00-815-b50.ap.ngrok.io';
+  static const developmentAPI = 'https://61ba-2402-800-61b1-9a2c-dd4c-87bb-3c56-7f06.ap.ngrok.io';
+  static const developmentSocket = 'https://61ba-2402-800-61b1-9a2c-dd4c-87bb-3c56-7f06.ap.ngrok.io';
   static const midtransDevKey = 'Some Key';
 
   //-- App Info

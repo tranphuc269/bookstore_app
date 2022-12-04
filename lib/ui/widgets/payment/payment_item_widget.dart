@@ -24,7 +24,7 @@ class PaymentItemWidget extends StatelessWidget {
         children: [
           GestureDetector(
             child: CachedImage(
-              url: ProductDummy.products[0],
+              url: cart.images.first,
               borderRadius: BorderRadius.circular(8),
             ),
             onTap: () {
@@ -39,12 +39,14 @@ class PaymentItemWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                SizedBox(width: 160, child: Text(
                   cart.productName,
                   style: AppStyle.subtitle18.copyWith(
                     color: const Color(0xFF36596A),
                   ),
-                ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),),
                 const SizedBox(
                   height: AppConst.defaultSmallMargin,
                 ),

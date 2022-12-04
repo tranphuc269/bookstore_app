@@ -6,6 +6,7 @@ import '../../../core/base/stateless_view_base.dart';
 import '../../../data/dummy/category_dummy.dart';
 import '../../widgets/base/base_view.dart';
 import '../../widgets/category/category_widget.dart';
+import '../product/product_list/product_list_controller.dart';
 import 'category_controller.dart';
 import 'components/category_appbar.dart';
 import 'components/category_banner.dart';
@@ -36,6 +37,7 @@ class CategoryView extends StateLessViewBase<CategoryController> {
               viewModel.categories.length,
               (index) => CategoryWidget(
                 category: viewModel.categories[index],
+                type: ProductListEnum.CATEGORY,
               ),
             )
           ],

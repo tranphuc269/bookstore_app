@@ -4,7 +4,7 @@ import '../../../../core/base/base_controller.dart';
 import '../../../../core/helper/dialog_helper.dart';
 import '../../../../data/models/response/catalog/product/cart/cart_added_request.dart';
 import '../../../../data/models/response/catalog/product/product_data.dart';
-import '../../../../data/sources/server/product/product_service.dart';
+import '../../../../data/sources/server/catalog/product/product_service.dart';
 
 class ProductDetailController extends BaseController {
   ProductDetailController({

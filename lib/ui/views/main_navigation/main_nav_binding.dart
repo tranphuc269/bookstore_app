@@ -4,7 +4,7 @@ import '../../../data/sources/server/auth/auth_api_impl.dart';
 import '../../../data/sources/server/catalog/banner/banner_api_impl.dart';
 import '../../../data/sources/server/catalog/category/category_service_impl.dart';
 import '../../../data/sources/server/catalog/producer/producer_service_impl.dart';
-import '../../../data/sources/server/product/product_service_impl.dart';
+import '../../../data/sources/server/catalog/product/product_service_impl.dart';
 import '../auth/login/login_controller.dart';
 import '../category/category_controller.dart';
 import '../home/home_controller.dart';

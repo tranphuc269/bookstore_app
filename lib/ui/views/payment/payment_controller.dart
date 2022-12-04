@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/base/base_controller.dart';
 import '../../../data/models/response/catalog/product/cart/cart_data.dart';
-import '../../../data/sources/server/catalog/cart/cart_service.dart';
+import '../../../data/models/response/order/order_request.dart';
+import '../../../data/sources/server/order/cart/cart_service.dart';
 
 class PaymentController extends BaseController {
   PaymentController({required this.cartService});
@@ -23,5 +25,15 @@ class PaymentController extends BaseController {
 
   Future<void> _getCart() async {
     cartData(await cartService.getMyCart());
+  }
+
+  Future<void> onPayment() async {
+    final _createOrder = await cartService.createOrder(
+        orderRequest: OrderRequest(
+            billingAddressId: '888b5fb4-acc4-4ec2-8a71-884fe910bb4b',
+            paymentType: PAYMENT_TYPE.VNPAY,
+            shippingAddressId: '888b5fb4-acc4-4ec2-8a71-884fe910bb4b',
+            information: 'Thanh toán đơn hàng'));
+    await launchUrl(Uri.parse(_createOrder!.data.paymentUrl!));
   }
 }

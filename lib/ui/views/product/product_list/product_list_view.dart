@@ -24,6 +24,7 @@ class ProductListView extends StateLessViewBase<ProductListController> {
           width: MediaQuery.of(context).size.width,
           child: ProductListBody(
             displayType: controller.displayType.value,
+            products: viewModel.products,
           ),
           height: MediaQuery.of(context).size.height,
         ),

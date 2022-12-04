@@ -56,7 +56,7 @@ class PreviewVerticalProductWidget extends StatelessWidget {
         ),
       ),
       onTap: () => Get.toNamed(ProductDetailView.route,
-          arguments: productData.producerId),
+          arguments: productData.productId),
     );
   }
 }
@@ -104,7 +104,7 @@ class PreviewStackProductWidget extends StatelessWidget {
                         color: AppColors.primary, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    productData.description,
+                    productData.categoryName,
                     style: AppStyle.normalSmall.copyWith(
                       color: const Color(0xFF323232).withOpacity(0.65),
                     ),

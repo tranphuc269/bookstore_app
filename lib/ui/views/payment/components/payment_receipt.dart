@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../../../core/app/app_constant.dart';
+import '../../../../core/helper/extension/double_extension.dart';
+import '../../../../core/helper/extension/int_extension.dart';
 import '../../../../core/themes/app_style.dart';
+import '../../../../data/models/response/catalog/product/cart/cart_data.dart';
 
 class PaymentReceipt extends StatelessWidget {
+  const PaymentReceipt({required this.cart});
+
+  final CartData cart;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -21,7 +28,8 @@ class PaymentReceipt extends StatelessWidget {
             Container(
               color: Colors.black12,
               height: 1 / 2,
-              margin: const EdgeInsets.symmetric(vertical: AppConst.defaultMediumMargin),
+              margin: const EdgeInsets.symmetric(
+                  vertical: AppConst.defaultMediumMargin),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,7 +40,7 @@ class PaymentReceipt extends StatelessWidget {
                       AppStyle.subtitle16.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  '10,000đ',
+                  10000.0.formatMoney(),
                   style: AppStyle.subtitle16,
                 ),
               ],
@@ -46,10 +54,10 @@ class PaymentReceipt extends StatelessWidget {
                 Text(
                   'Thuế (VAT)',
                   style:
-                  AppStyle.subtitle16.copyWith(fontWeight: FontWeight.bold),
+                      AppStyle.subtitle16.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  '15,000đ',
+                  (cart.totalPrice / 10).formatMoney(),
                   style: AppStyle.subtitle16,
                 ),
               ],
@@ -63,10 +71,10 @@ class PaymentReceipt extends StatelessWidget {
                 Text(
                   'Thành tiền',
                   style:
-                  AppStyle.subtitle16.copyWith(fontWeight: FontWeight.bold),
+                      AppStyle.subtitle16.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  '1,750,000đ',
+                  (cart.totalPrice * 1.1 + 10000).formatMoney(),
                   style: AppStyle.subtitle16,
                 ),
               ],

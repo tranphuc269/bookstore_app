@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../core/base/base_controller.dart';
 import '../../../data/models/response/catalog/product/cart/cart_data.dart';
-import '../../../data/sources/server/catalog/cart/cart_service.dart';
+import '../../../data/sources/server/order/cart/cart_service.dart';
 
 class CartController extends BaseController {
   CartController({required this.cartService});

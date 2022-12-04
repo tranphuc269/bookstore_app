@@ -1,5 +1,5 @@
-import '../../../models/response/catalog/product/cart/cart_added_request.dart';
-import '../../../models/response/catalog/product/product_data.dart';
+import '../../../../models/response/catalog/product/cart/cart_added_request.dart';
+import '../../../../models/response/catalog/product/product_data.dart';
 
 abstract class ProductService {
   Future<void> addToCart(
@@ -14,4 +14,13 @@ abstract class ProductService {
   });
 
   Future<ProductData> getSingleProduct({required String productId});
+
+
+  Future<List<ProductData>> getProductByProducerId({
+    required String producerId,
+  });
+
+  Future<List<ProductData>> getProductByCategoryId({
+    required String categoryId,
+  });
 }
