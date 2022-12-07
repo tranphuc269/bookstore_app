@@ -16,16 +16,16 @@ class ProductDetailController extends BaseController {
 
   final ProductService productService;
 
-  late ProductData productData;
+  final productData = Rx<ProductData?>(null);
 
   @override
   Future<void> onInit() async {
+    super.onInit();
     isLoading(true);
     await Future.wait([
       _getProduct(),
     ]);
     isLoading(false);
-    super.onInit();
   }
 
   /// external
@@ -52,6 +52,6 @@ class ProductDetailController extends BaseController {
 
   /// internal
   Future<void> _getProduct() async {
-    productData = await productService.getSingleProduct(productId: productId);
+    productData.value = await productService.getSingleProduct(productId: productId);
   }
 }

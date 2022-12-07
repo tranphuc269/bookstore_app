@@ -70,16 +70,14 @@ class LoginView extends GetView<LoginController> {
         children: [
           const SizedBox(height: 20),
           BaseFormField(
-            label: International.phone.tr,
-            hint: International.phone.tr,
-            controller: controller.phoneController,
-            keyboardType: TextInputType.phone,
-            icon: Icons.phone,
-            validator: (value) => AppValidator.field(
-              title: International.phone.tr,
-              value: value.toString(),
-              regex: AppRegex.phone,
-            ),
+            label: International.email.tr,
+            hint: International.email.tr,
+            controller: controller.userNameController,
+            keyboardType: TextInputType.emailAddress,
+            icon: Icons.people,
+            validator: (value) {
+              return null;
+            },
           ),
           const SizedBox(height: 20),
           Obx(
@@ -92,11 +90,9 @@ class LoginView extends GetView<LoginController> {
               endIcon: IconButton(
                   icon: const Icon(Icons.visibility_off),
                   onPressed: () => controller.hidePassword()),
-              validator: (value) => AppValidator.field(
-                title: International.password.tr,
-                value: value.toString(),
-                regex: AppRegex.password,
-              ),
+              validator: (value){
+                return null;
+              },
             ),
           ),
           const SizedBox(height: 20),
@@ -117,12 +113,12 @@ class LoginView extends GetView<LoginController> {
   Column _buildFooter(BuildContext context) {
     return Column(
       children: [
-        BaseButton(
-          onPressed: () => controller.bypassLogin(),
-          text: International.skip.tr,
-          icon: Icons.arrow_forward,
-          color: AppColors.primary,
-        ),
+        // BaseButton(
+        //   onPressed: () => controller.bypassLogin(),
+        //   text: International.skip.tr,
+        //   icon: Icons.arrow_forward,
+        //   color: AppColors.primary,
+        // ),
         const SizedBox(height: 30),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -148,7 +144,7 @@ class LoginView extends GetView<LoginController> {
                 style: const TextStyle(
                     color: AppColors.primary, fontWeight: FontWeight.bold),
               ),
-              onTap: (){
+              onTap: () {
                 Get.offAndToNamed(RegisterView.route);
               },
             ),

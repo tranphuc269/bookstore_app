@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,9 +14,9 @@ class LoginController extends GetxController {
   final AuthApi dataSource;
 
   final formKey = GlobalKey<FormState>();
-  final phoneController = TextEditingController();
+  final _secure = Get.find<SecureStorageManager>();
   final passController = TextEditingController();
-  final emailController = TextEditingController();
+  final userNameController = TextEditingController();
   RxBool isHiddenPassword = true.obs;
   Rx<bool> hidePassword() => isHiddenPassword.toggle();
 
@@ -27,13 +29,14 @@ class LoginController extends GetxController {
   }
 
   Future<void> login() async {
+
     if (validateField()) {
       try {
-        Loading.show();
+        unawaited(Loading.show());
         await dataSource.login(
-            phoneNumber: phoneController.text,
-            email: emailController.text,
+            userName: userNameController.text,
             password: passController.text).then((res) async {
+          bypassLogin(token: res.access_token);
           Loading.hide();
           await Get.offAllNamed(MainNavView.route);
         });
@@ -48,8 +51,8 @@ class LoginController extends GetxController {
     }
   }
 
-  void bypassLogin() async {
-    await SecureStorageManager.find.setToken(value: 'dummy');
+  void bypassLogin({required String token}) async {
+    await SecureStorageManager.find.setToken(value: token);
     await AuthManager.find.setAuth();
   }
 }

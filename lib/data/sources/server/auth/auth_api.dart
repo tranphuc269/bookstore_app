@@ -1,4 +1,5 @@
 import '../../../models/response/user/user.dart';
+import '../../../models/response/user/user_login_response.dart';
 
 abstract class AuthApi {
   Future<User> verifyToken({
@@ -6,9 +7,8 @@ abstract class AuthApi {
     required String token,
   });
 
-  Future<User> login({
-    required String phoneNumber,
-    required String email,
+  Future<UserLoginResponse> login({
+    required String userName,
     required String password,
   });
 }

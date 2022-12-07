@@ -44,7 +44,7 @@ class PaymentView extends StateLessViewBase<PaymentController> {
               const SizedBox(
                 height: AppConst.defaultMediumMargin,
               ),
-              PaymentReceipt(cart: viewModel.cartData.value!,),
+              if(viewModel.cartData.value != null)PaymentReceipt(cart: viewModel.cartData.value!,),
               const SizedBox(
                 height: AppConst.defaultMediumMargin,
               ),

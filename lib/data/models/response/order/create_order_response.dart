@@ -9,7 +9,7 @@ class CreateOrderResponse extends BaseResponse {
     return CreateOrderResponse(
       code: json['code'],
       message: json['message'],
-      data: json['data'],
+      data: CreateOrderData.fromJson(json['data']),
     );
   }
 
@@ -39,7 +39,8 @@ class CreateOrderData {
       totalPrice: json['totalPrice'],
       billingAddress: AddressData.fromJson(json['billingAddress']),
       created_at: json['created_at'],
-      data: json['data'],
+      data:
+          (json['data'] as List).map((e) => OrderItemData.fromJson(e)).toList(),
       delivered: json['delivered'],
       deliveredDate: json['deliveredDate'],
       itemsTotalPrice: json['itemsTotalPrice'],
@@ -87,7 +88,7 @@ class OrderItemData {
   }
 
   String productId;
-  String quantity;
+  int quantity;
   double orderItemPrice;
   double orderExtendedPrice;
   List<String> images;

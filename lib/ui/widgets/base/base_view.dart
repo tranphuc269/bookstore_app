@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../auto_hiden_keyboard.dart';
@@ -35,18 +36,18 @@ class BaseView extends StatelessWidget {
         child: SingleChildScrollView(
           child: isConnectNetwork
               ? (loadingEnabled
-              ? loadingView ?? const ShimmerDetail()
-              : errorEnabled
-              ? errorView ??
-              ErrorView(
-                isScrollable: false,
-                errorSubtitle: errorMsg,
-                onRetry: onRetry,
-              )
-              : child)
+                  ? loadingView ?? const ShimmerDetail()
+                  : errorEnabled
+                      ? errorView ??
+                          ErrorView(
+                            isScrollable: false,
+                            errorSubtitle: errorMsg,
+                            onRetry: onRetry,
+                          )
+                      : child)
               : NoInternetWidget(
-            onPress: () => Future.sync(onRetry),
-          ),
+                  onPress: () => Future.sync(onRetry),
+                ),
         ),
       ),
     );

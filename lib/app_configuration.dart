@@ -19,9 +19,9 @@ class AppConfiguration {
   static const midtransStagingKey = 'Some Key';
 
   //-- Development
-  static const developmentAPI = 'https://61ba-2402-800-61b1-9a2c-dd4c-87bb-3c56-7f06.ap.ngrok.io';
-  static const developmentSocket = 'https://61ba-2402-800-61b1-9a2c-dd4c-87bb-3c56-7f06.ap.ngrok.io';
-  static const midtransDevKey = 'Some Key';
+  static String developmentAPI = '';
+  static String developmentSocket = '';
+  static String midtransDevKey = 'Some Key';
 
   //-- App Info
   static String appName = 'Skybase';

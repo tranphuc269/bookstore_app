@@ -3,6 +3,6 @@ class ApiUrl {
 
   // Auth
   static const verifyToken = 'auth/matchtoken';
-  static const login = 'auth/login';
+  static const login = '/auth-service/oauth/token';
   static const refreshToken = 'auth/refresh';
 }

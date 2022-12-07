@@ -13,7 +13,6 @@ import 'components/product_detail_specifications.dart';
 import 'product_detail_controller.dart';
 
 class ProductDetailView extends StateLessViewBase<ProductDetailController> {
-
   static const route = '/product_detail';
 
   @override
@@ -23,17 +22,26 @@ class ProductDetailView extends StateLessViewBase<ProductDetailController> {
       () => Stack(
         children: [
           BaseView(
-            loadingEnabled: controller.isLoading.isTrue,
+            loadingEnabled: controller.isLoading.value,
             errorEnabled: controller.isError.value,
             onRetry: controller.onInit,
             isConnectNetwork: controller.isConnectNetwork.value,
             child: Column(
               children: [
-                ProductDetailImages(images: viewModel.productData.images,),
-                ProductDetailIntroduction(productData: viewModel.productData,),
-                ProductDetailSpecifications(productData: viewModel.productData,),
-                ProductDetailReview(),
-                ProductDetailRelated(),
+                if (viewModel.productData.value != null)
+                  ProductDetailImages(
+                    images: viewModel.productData.value!.images,
+                  ),
+                if (viewModel.productData.value != null)
+                  ProductDetailIntroduction(
+                    productData: viewModel.productData.value!,
+                  ),
+                if (viewModel.productData.value != null)
+                  ProductDetailSpecifications(
+                    productData: viewModel.productData.value!,
+                  ),
+                if (viewModel.productData.value != null) ProductDetailReview(),
+                if (viewModel.productData.value != null) ProductDetailRelated(),
                 const SizedBox(
                   height: 80,
                 ),
@@ -42,7 +50,9 @@ class ProductDetailView extends StateLessViewBase<ProductDetailController> {
           ),
           Positioned.fill(
             child: Align(
-              child: ProductDetailBottomSheet(addToCart: controller.addToCart,),
+              child: ProductDetailBottomSheet(
+                addToCart: controller.addToCart,
+              ),
               alignment: Alignment.bottomCenter,
             ),
           ),

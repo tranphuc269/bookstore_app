@@ -88,16 +88,15 @@ Object? _setBody({
   }
   return null;
 }
-const _token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsid2ViIl0sInVzZXJfaWQiOiJ4Y3ZjdmJ2di1iYTVkLTRiOTItODViZS1kZmdkZmdkZmdkZmciLCJ1c2VyX25hbWUiOiJhZG1pbi5hZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NzAzODExMzUsImF1dGhvcml0aWVzIjpbIlNUQU5EQVJEX1VTRVIiLCJBRE1JTl9VU0VSIl0sImp0aSI6InJGVUhwOUx5TkVSMU5ob0JtV3RaTmtaVzJONCIsImNsaWVudF9pZCI6IjkzZWQ0NTNlLWI3YWMtNDE5Mi1hNmQ0LWM0NWZhZTBkOTlhYyJ9.qbNc_gyA7PKPWt1cOoKFjapBJrLSKR1a5Q72p5cioo4KmOV2MCwUlZIH8uFRLIWLYhE81gBEMew9fkt5Z2zlIZd586GuK1bp9kLy-7UmEQaeWeDShWf3-oksJJXwSmPNQ-VwL6KWIJE3GAuTUbqFrl8WAvDzB2l712NjOE4Ngmqiv6LJI1zUH_feN9_Fp9eqCV0Lle-mlHCl0IbOKz-ksW3Caa9g1kmon2M8amv1-8_gEVtswMxmMHUIco_ReMUemuy4WpN1NeElhHfyAedTJqgtph0FcAGQgP5iJgHHjvCKflnC53hTib_hqMF7K2m4IboKHPo9MWhqz0ea8gXKHA';
 Future<void> _tokenManager(bool useToken) async {
   DioClient.setInterceptor();
-  String? token = await SecureStorageManager.find.getToken();
+  final String? token = await SecureStorageManager.find.getToken();
   if (useToken) {
-    headers[HttpHeaders.authorizationHeader] = 'Bearer $_token';
+    headers[HttpHeaders.authorizationHeader] = 'Bearer $token';
   } else {
     headers.clear();
   }
-  headers[HttpHeaders.authorizationHeader] = 'Bearer $_token';
+  headers[HttpHeaders.authorizationHeader] = 'Bearer $token';
 }
 
 /// Wrap fetch request with try-catch
