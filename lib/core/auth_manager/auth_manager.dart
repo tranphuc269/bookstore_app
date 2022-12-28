@@ -4,10 +4,6 @@ import 'package:get/get.dart';
 
 import '../../data/models/response/user/user.dart';
 import '../../data/sources/server/auth/auth_api_impl.dart';
-import '../../ui/views/auth/intro/intro_view.dart';
-import '../../ui/views/auth/login/login_view.dart';
-import '../../ui/views/auth/splash/splash_view.dart';
-import '../../ui/views/main_navigation/main_nav_view.dart';
 import '../database/get_storage/get_storage_key.dart';
 import '../database/get_storage/get_storage_manager.dart';
 import '../database/secure_storage/secure_storage_manager.dart';
@@ -48,28 +44,28 @@ class AuthManager extends GetxController {
   }
 
   Future<void> authChanged(AuthState? state) async {
-    switch (state?.appStatus) {
-      case AppType.INITIAL:
-        await setup();
-        break;
-      case AppType.FIRST_INSTALL:
-        Timer(
-          const Duration(seconds: 2),
-              () => Get.offAllNamed(IntroView.route),
-        );
-        break;
-      case AppType.UNAUTHENTICATED:
-        Timer(
-          const Duration(seconds: 2),
-              () => Get.offAllNamed(LoginView.route),
-        );
-        break;
-      case AppType.AUTHENTICATED:
-        await Get.offAllNamed(MainNavView.route);
-        break;
-      default:
-        await Get.toNamed(SplashView.route);
-    }
+    // switch (state?.appStatus) {
+    //   case AppType.INITIAL:
+    //     await setup();
+    //     break;
+    //   case AppType.FIRST_INSTALL:
+    //     Timer(
+    //       const Duration(seconds: 2),
+    //           () => Get.offAllNamed(IntroView.route),
+    //     );
+    //     break;
+    //   case AppType.UNAUTHENTICATED:
+    //     Timer(
+    //       const Duration(seconds: 2),
+    //           () => Get.offAllNamed(LoginView.route),
+    //     );
+    //     break;
+    //   case AppType.AUTHENTICATED:
+    //     await Get.offAllNamed(MainNavView.route);
+    //     break;
+    //   default:
+    //     await Get.toNamed(SplashView.route);
+    // }
     update();
   }
 

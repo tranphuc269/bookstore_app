@@ -6,6 +6,7 @@ import 'category_service.dart';
 class CategoryServiceImpl extends CategoryService{
   @override
   Future<List<CategoryData>> getCategory() async{
+    return [];
     const url = '/catalog-service/categories?sort=categoryId,asc&page=0&size=10';
     // TODO: implement getAllBanner
     final _res = await sendRequest(

@@ -17,7 +17,6 @@ import 'core/helper/general_function.dart';
 import 'core/network/api_config.dart';
 import 'core/themes/app_theme.dart';
 import 'core/themes/theme_manager.dart';
-import 'data/sources/server/catalog/banner/banner_api_impl.dart';
 import 'data/sources/server/catalog/category/category_service_impl.dart';
 import 'data/sources/server/catalog/producer/producer_service_impl.dart';
 import 'data/sources/server/catalog/product/product_service_impl.dart';
@@ -62,7 +61,6 @@ class Initializer extends GetxService {
     Get.put(AuthManager(), permanent: true);
 
     // api service
-    Get.lazyPut(() => BannerServiceImpl(), fenix: true);
     Get.lazyPut(() => CategoryServiceImpl(), fenix: true);
     Get.lazyPut(() => ProducerServiceImpl(), fenix: true);
     Get.lazyPut(() => ProductServiceImpl(), fenix: true);

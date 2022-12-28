@@ -1,40 +1,52 @@
-import '../views/address/address_route.dart';
-import '../views/auth/intro/intro_route.dart';
-import '../views/auth/login/login_route.dart';
-import '../views/auth/register/register_route.dart';
-import '../views/auth/splash/splash_route.dart';
-import '../views/cart/cart_route.dart';
-import '../views/home/home_route.dart';
-import '../views/main_navigation/main_nav_route.dart';
-import '../views/main_navigation/main_nav_view.dart';
-import '../views/my_page/my_page_route.dart';
-import '../views/notification/notification_route.dart';
-import '../views/payment/payment_route.dart';
-import '../views/product/product_detail/product_detail_route.dart';
-import '../views/product/product_list/product_list_route.dart';
-import '../views/qr_code_scanner/qr_code_scanner_route.dart';
-import '../views/sample_feature/detail/sample_feature_detail_route.dart';
-import '../views/sample_feature/list/sample_feature_list_route.dart';
+import 'package:get/get.dart';
+
+import '../views/cart/cart_screen.dart';
+import '../views/complete_profile/complete_profile_screen.dart';
+import '../views/details/details_screen.dart';
+import '../views/forgot_password/forgot_password_screen.dart';
+import '../views/home/binding.dart';
+import '../views/home/home_screen.dart';
+import '../views/login_success/login_success_screen.dart';
+import '../views/otp/otp_screen.dart';
+import '../views/profile/profile_screen.dart';
+import '../views/sign_in/sign_in_screen.dart';
+import '../views/sign_up/sign_up_screen.dart';
+import '../views/splash/splash_screen.dart';
 
 class AppPages {
-  static const initial = MainNavView.route;
+  static const initial = ' MainNavView.route';
 
-  static final routes = [
-    ...splashRoute,
-    ...introRoute,
-    ...loginRoute,
-    ...mainNavRoute,
-    ...sampleFeatureRoute,
-    ...homeRoute,
-    ...sampleFeatureDetailPage,
-    ...productRoute,
-    ...productListRoute,
-    ...registerRoute,
-    ...cartRoute,
-    ...paymentRoute,
-    ...notificationRoute,
-    ...myPageRoute,
-    ...addressRoute,
-    ...qrCodeRoute,
+  static final routes = <GetPage>[
+    GetPage(name: DetailsScreen.routeName, page: () => DetailsScreen()),
+    GetPage(name: SplashScreen.routeName, page: () => SplashScreen()),
+    GetPage(
+        name: HomeScreen.routeName,
+        page: () => HomeScreen(),
+        binding: HomeBinding()),
+    GetPage(
+        name: ForgotPasswordScreen.routeName,
+        page: () => ForgotPasswordScreen()),
+    GetPage(name: CartScreen.routeName, page: () => CartScreen()),
+    GetPage(
+        name: CompleteProfileScreen.routeName,
+        page: () => CompleteProfileScreen()),
+    GetPage(name: SignUpScreen.routeName, page: () => SignUpScreen()),
+    GetPage(name: SignInScreen.routeName, page: () => SignInScreen()),
+    GetPage(name: ProfileScreen.routeName, page: () => ProfileScreen()),
+    GetPage(
+        name: LoginSuccessScreen.routeName, page: () => LoginSuccessScreen()),
+    GetPage(name: OtpScreen.routeName, page: () => OtpScreen()),
   ];
 }
+
+///SplashScreen.routeName: (context) => SplashScreen(),
+//   SignInScreen.routeName: (context) => SignInScreen(),
+//   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
+//   LoginSuccessScreen.routeName: (context) => LoginSuccessScreen(),
+//   SignUpScreen.routeName: (context) => SignUpScreen(),
+//   CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
+//   OtpScreen.routeName: (context) => OtpScreen(),
+//   HomeScreen.routeName: (context) => HomeScreen(),
+//   DetailsScreen.routeName: (context) => DetailsScreen(),
+//   CartScreen.routeName: (context) => CartScreen(),
+//   ProfileScreen.routeName: (context) => ProfileScreen(),

@@ -9,17 +9,17 @@ class AppConfiguration {
   static const tokenType = TokenType.ACCESS_TOKEN;
 
   //-- Production
-  static const productionAPI = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
-  static const productionSocket = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
+  static const productionAPI = 'https://bf67-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
+  static const productionSocket = 'https://bf67-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
   static const midtransProductionKey = 'Some Key';
 
   //-- Staging
-  static const stagingAPI = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
-  static const stagingSocket = 'https://015f-2a09-bac0-23-00-815-b50.ap.ngrok.io';
+  static const stagingAPI = 'https://bf67-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
+  static const stagingSocket = 'https://bf67-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
   static const midtransStagingKey = 'Some Key';
 
   //-- Development
-  static String developmentAPI = '';
+  static String developmentAPI = 'https://bf67-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
   static String developmentSocket = '';
   static String midtransDevKey = 'Some Key';
 

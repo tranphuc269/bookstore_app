@@ -2,7 +2,6 @@ import 'app_configuration.dart';
 import 'core/app/app_env.dart';
 import 'core/app/app_info.dart';
 import 'core/database/secure_storage/secure_storage_manager.dart';
-import 'data/sources/server/catalog/banner/banner_api_impl.dart';
 import 'initializer.dart';
 import 'ui/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +11,14 @@ import 'core/localization/app_translations.dart';
 import 'core/localization/locale_helper.dart';
 import 'core/themes/app_theme.dart';
 import 'core/themes/theme_manager.dart';
-import 'ui/views/auth/login/login_view.dart';
+import 'ui/views/home/home_screen.dart';
+import 'ui/views/splash/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Initializer.init();
   AppInfo.setInfo(await PackageInfo.fromPlatform());
-  AppConfiguration.developmentAPI = 'https://a6f0-116-111-100-164.ap.ngrok.io';
+  AppConfiguration.developmentAPI = 'https://bf67-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
   AppEnv.set(Env.DEVELOPMENT);
   final _isLogin = await authChecked();
   runApp(App(
@@ -43,7 +43,7 @@ class App extends StatelessWidget {
         locale: LocaleHelper().getCurrentLocale(),
         fallbackLocale: LocaleHelper().fallbackLocale,
         getPages: AppPages.routes,
-        initialRoute: isUserLoggedIn ? AppPages.initial : LoginView.route,
+        initialRoute: HomeScreen.routeName,
       ),
     );
   }

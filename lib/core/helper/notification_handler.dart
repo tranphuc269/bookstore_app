@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import '../../ui/views/main_navigation/main_nav_view.dart';
 
 class NotificationHandler {
   NotificationHandler({
@@ -33,10 +32,11 @@ class NotificationHandler {
 }
 
 String pageDirectionFromNotification(String type, int? id) {
+  return '';
   switch (type) {
-    case '*':
-      return MainNavView.route;
-    default:
-      return MainNavView.route;
+    // case '*':
+    //   return MainNavView.route;
+    // default:
+    //   return MainNavView.route;
   }
 }

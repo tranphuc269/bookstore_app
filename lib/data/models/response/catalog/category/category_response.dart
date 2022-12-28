@@ -2,13 +2,11 @@ import '../../base_response.dart';
 import 'category_data.dart';
 
 class CategoryResponse extends BaseResponse {
-  CategoryResponse(
-      {required super.code, required super.message, required this.data});
+  CategoryResponse({required super.meta, required this.data});
 
   factory CategoryResponse.fromJson(Map<String, dynamic> json) {
     return CategoryResponse(
-      code: json['code'],
-      message: json['message'],
+      meta: BaseStatus.fromJson(json['meta']),
       data:
           (json['data'] as List).map((e) => CategoryData.fromJson(e)).toList(),
     );

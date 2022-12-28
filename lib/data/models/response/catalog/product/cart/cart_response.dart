@@ -4,15 +4,13 @@ import 'cart_data.dart';
 
 class CartResponse extends BaseResponse {
   CartResponse({
-    required super.code,
-    required super.message,
+    required super.meta,
     required this.data,
   });
 
   factory CartResponse.fromJson(Map<String, dynamic> json) {
     return CartResponse(
-      code: json['code'],
-      message: json['message'],
+      meta: BaseStatus.fromJson(json['meta']),
       data: CartData.fromJson(json['data']),
     );
   }

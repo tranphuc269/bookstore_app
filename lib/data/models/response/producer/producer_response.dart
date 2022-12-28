@@ -3,15 +3,13 @@ import 'producer_data.dart';
 
 class ProducerResponse extends BaseResponse {
   ProducerResponse({
-    required super.code,
-    required super.message,
+    required super.meta,
     required this.data,
   });
 
   factory ProducerResponse.fromJson(Map<String, dynamic> json) {
     return ProducerResponse(
-      code: json['code'],
-      message: json['message'],
+      meta: BaseStatus.fromJson(json['meta']),
       data:
           (json['data'] as List).map((e) => ProducerData.fromJson(e)).toList(),
     );

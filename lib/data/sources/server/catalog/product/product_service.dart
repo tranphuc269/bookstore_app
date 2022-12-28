@@ -8,7 +8,6 @@ abstract class ProductService {
       required CartAddedRequest cartRequest});
 
   Future<List<ProductData>> getProductBySortPageSize({
-    required String sort,
     required int page,
     required int size,
   });

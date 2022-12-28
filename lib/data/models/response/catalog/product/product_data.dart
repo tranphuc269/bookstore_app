@@ -1,57 +1,32 @@
 class ProductData {
   ProductData(
-      {required this.productId,
-      required this.producerName,
-      required this.producerId,
-      required this.description,
-      required this.price,
+      {required this.name,
       required this.images,
+      required this.price,
+      required this.productId,
       required this.availableItemCount,
-      required this.averageRating,
-      required this.categoryId,
-      required this.categoryName,
-      required this.noOfRatings,
-      required this.productName,
-      required this.author,
-      required this.dimension,
-      required this.pageCount,
-      required this.weight});
+      required this.quantitySold,
+      required this.description,
+      required this.shortContent});
 
   factory ProductData.fromJson(Map<String, dynamic> json) {
     return ProductData(
-      productId: json['productId'],
-      producerName: json['producerName'],
-      producerId: json['producerId'],
-      description: json['description'],
-      price: json['price'],
-      images: (json['images'] as List).map((e) => e.toString()).toList(),
-      availableItemCount: json['availableItemCount'],
-      averageRating: json['averageRating'],
-      categoryId: json['categoryId'],
-      categoryName: json['categoryName'],
-      noOfRatings: json['noOfRatings'],
-      productName: json['productName'],
-      author: json['author'],
-      dimension: json['dimension'],
-      weight: json['weight'],
-      pageCount: json['pageCount'],
-    );
+        name: json['name'],
+        images: (json['images'] as List).map((e) => e.toString()).toList(),
+        price: json['price'],
+        productId: json['productId'],
+        availableItemCount: json['availableItemCount'],
+        quantitySold: json['quantitySold'],
+        shortContent: json['shortContent'],
+        description: json['description']);
   }
 
   String productId;
-  String productName;
+  String name;
   String description;
+  String shortContent;
   double price;
-  String categoryName;
-  String categoryId;
-  String producerId;
-  String producerName;
   int availableItemCount;
-  double averageRating;
-  int noOfRatings;
-  int? pageCount;
-  String? dimension;
-  String? author;
-  String? weight;
+  int quantitySold;
   List<String> images;
 }

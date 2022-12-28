@@ -29,14 +29,15 @@ class ProductServiceImpl extends ProductService {
 
   @override
   Future<List<ProductData>> getProductBySortPageSize(
-      {required String sort, required int page, required int size}) async {
-    final url = '/catalog-service/products?sort=$sort&page=$page&size=$size';
+      {required int page, required int size}) async {
+    final url = '/catalog-service/product?limit=$size&offset=$page';
     // TODO: implement getProductBySortPageSize
     final _res = await sendRequest(
       url: url,
       requestMethod: RequestMethod.GET,
       useToken: true,
     );
+    print('_res : $_res');
     final ProductListResponse product = ProductListResponse.fromJson(_res.data);
     return product.data;
   }

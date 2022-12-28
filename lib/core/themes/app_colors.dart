@@ -41,7 +41,7 @@ class AppColors {
     800: const Color.fromRGBO(68, 68, 68, 1),
     900: const Color.fromRGBO(45, 45, 45, 1),
   };
-  static MaterialColor materialPrimary = MaterialColor(0xff009cc6, color);
+  static MaterialColor materialPrimary = MaterialColor(0xffffffff, color);
 
 
 

@@ -3,12 +3,11 @@ import '../user/address_data.dart';
 
 class CreateOrderResponse extends BaseResponse {
   CreateOrderResponse(
-      {required super.code, required super.message, required this.data});
+      {required super.meta, required this.data});
 
   factory CreateOrderResponse.fromJson(Map<String, dynamic> json) {
     return CreateOrderResponse(
-      code: json['code'],
-      message: json['message'],
+      meta: BaseStatus.fromJson(json['meta']),
       data: CreateOrderData.fromJson(json['data']),
     );
   }
