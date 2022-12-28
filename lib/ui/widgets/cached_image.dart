@@ -5,8 +5,8 @@ import 'common_widget.dart';
 
 class CachedImage extends StatelessWidget {
   const CachedImage({
-    Key? key,
     required this.url,
+    Key? key,
     this.borderRadius,
   }) : super(key: key);
 

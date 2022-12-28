@@ -6,7 +6,7 @@ class CategoryResponse extends BaseResponse {
 
   factory CategoryResponse.fromJson(Map<String, dynamic> json) {
     return CategoryResponse(
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
       data:
           (json['data'] as List).map((e) => CategoryData.fromJson(e)).toList(),
     );

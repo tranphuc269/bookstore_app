@@ -10,7 +10,7 @@ class ProductListResponse extends BaseResponse {
   factory ProductListResponse.fromJson(Map<String, dynamic> json) {
     return ProductListResponse(
       data: (json['data'] as List).map((e) => ProductData.fromJson(e)).toList(),
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
     );
   }
 
@@ -25,7 +25,7 @@ class ProductSingleResponse extends BaseResponse {
 
   factory ProductSingleResponse.fromJson(Map<String, dynamic> json) {
     return ProductSingleResponse(
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
       data: ProductData.fromJson(json['data']),
     );
   }

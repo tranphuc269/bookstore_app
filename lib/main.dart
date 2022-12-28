@@ -18,7 +18,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Initializer.init();
   AppInfo.setInfo(await PackageInfo.fromPlatform());
-  AppConfiguration.developmentAPI = 'https://bf67-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
+  AppConfiguration.developmentAPI =
+      'https://59dd-2a09-bac1-7a80-50-00-245-4.ap.ngrok.io';
   AppEnv.set(Env.DEVELOPMENT);
   final _isLogin = await authChecked();
   runApp(App(
@@ -51,6 +52,9 @@ class App extends StatelessWidget {
 
 Future<bool> authChecked() async {
   final _secure = Get.find<SecureStorageManager>();
+  await _secure.setToken(
+      value:
+          'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsid2ViIl0sInVzZXJfaWQiOiJhODVmMGYyYy0yZDRkLTRiNzUtOTdiZC00MGQzNTQ4NzM1ZjIiLCJ1c2VyX25hbWUiOiJ0cmFucGh1YyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NzI0ODAyNTEsImF1dGhvcml0aWVzIjpbIlNUQU5EQVJEX1VTRVIiXSwianRpIjoiZHNQMlRCNzJkZGlldkZfXzYxa3VtV1RjQ0JVIiwiY2xpZW50X2lkIjoiOTNlZDQ1M2UtYjdhYy00MTkyLWE2ZDQtYzQ1ZmFlMGQ5OWFjIn0.Ypolb0YiGjZgb3iGQXd2MT3OZJbstWR7Ll_0-98Y4DiYrxTw7qMJmpPWFkfkyjH1CxA85teP_7rt_SBrtRtiBASZ5m4u3is1vA3Pfh_37rBqygNVY69Yqinan8lBCfgcEFB-OqJkHIXmJ_jCUdwpDnym7L6g6Pp6-AC_IrmsuqTJkPpRbQnbXtF_7-uiJ4EtCj5uz6CCp9D0Rd3eYxSkmIG-gjtrxiL3dV5y8hr8PB2OGdFAa8mnJi2nheIZfzBx7s2YtppCipDcWY3msUrzebnwCE7VYi55GGR697Arvf8JSp2mgtsOPo95EvM7j-nB6Tc5-GV-mfu8j1y3aeyP3w');
   final _token = await _secure.getToken();
-  return  (_token ?? '').isNotEmpty;
+  return (_token ?? '').isNotEmpty;
 }

@@ -5,13 +5,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/app/size_config.dart';
-import '../../../../data/models/Product.dart';
+
 import '../../../../data/models/response/catalog/product/product_data.dart';
 
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
-    Key? key,
     required this.product,
+    Key? key,
     this.pressOnSeeMore,
   }) : super(key: key);
 
@@ -24,8 +24,9 @@ class ProductDescription extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          padding: EdgeInsets.symmetric(
+              horizontal: getProportionateScreenWidth(20),
+              vertical: getProportionateScreenWidth(16)),
           child: Text(
             product.name,
             style: Theme.of(context).textTheme.headline6,
@@ -61,8 +62,6 @@ class ProductDescription extends StatelessWidget {
           ),
           child: Text(
             product.description,
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
           ),
         ),
         Padding(
@@ -75,7 +74,7 @@ class ProductDescription extends StatelessWidget {
             child: Row(
               children: const [
                 Text(
-                  'See More Detail',
+                  'Xem thêm',
                   style: TextStyle(
                       fontWeight: FontWeight.w600, color: kPrimaryColor),
                 ),

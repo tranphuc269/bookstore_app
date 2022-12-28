@@ -7,7 +7,7 @@ class BannerResponse extends BaseResponse {
 
   factory BannerResponse.fromJson(Map<String, dynamic> json) {
     return BannerResponse(
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
       data: (json['data'] as List).map((e) => BannerData.fromJson(e)).toList(),
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/app/size_config.dart';
-import '../../../../data/models/Product.dart';
+
 import '../../../../data/models/response/catalog/product/product_data.dart';
 import '../../../widgets/cached_image.dart';
 
@@ -20,6 +20,7 @@ class ProductImages extends StatefulWidget {
 
 class _ProductImagesState extends State<ProductImages> {
   int selectedImage = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,14 +35,17 @@ class _ProductImagesState extends State<ProductImages> {
             ),
           ),
         ),
-        // SizedBox(height: getProportionateScreenWidth(20)),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...List.generate(widget.product.images.length,
-                (index) => buildSmallProductPreview(index)),
-          ],
-        )
+        Padding(
+          padding:
+              EdgeInsets.symmetric(vertical: getProportionateScreenWidth(20)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ...List.generate(widget.product.images.length,
+                  (index) => buildSmallProductPreview(index)),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -65,7 +69,9 @@ class _ProductImagesState extends State<ProductImages> {
           border: Border.all(
               color: kPrimaryColor.withOpacity(selectedImage == index ? 1 : 0)),
         ),
-        child: CachedImage(url: widget.product.images[index],),
+        child: CachedImage(
+          url: widget.product.images[index],
+        ),
       ),
     );
   }

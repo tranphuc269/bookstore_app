@@ -1,8 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/app/size_config.dart';
-import '../../../../data/models/Product.dart';
+
 import '../../../../data/models/response/catalog/product/product_data.dart';
 import '../../../widgets/rounded_icon_btn.dart';
 
@@ -23,13 +25,14 @@ class ColorDots extends StatelessWidget {
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         children: [
-          // ...List.generate(
-          //   product.colors.length,
-          //   (index) => ColorDot(
-          //     color: product.colors[index],
-          //     isSelected: index == selectedColor,
-          //   ),
-          // ),
+          ...List.generate(
+            product.images.length,
+            (index) => ColorDot(
+              color:
+                  Colors.primaries[Random().nextInt(Colors.primaries.length)],
+              isSelected: index == selectedColor,
+            ),
+          ),
           Spacer(),
           RoundedIconBtn(
             icon: Icons.remove,

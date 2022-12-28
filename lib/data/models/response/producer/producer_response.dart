@@ -9,7 +9,7 @@ class ProducerResponse extends BaseResponse {
 
   factory ProducerResponse.fromJson(Map<String, dynamic> json) {
     return ProducerResponse(
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
       data:
           (json['data'] as List).map((e) => ProducerData.fromJson(e)).toList(),
     );

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/app/app_constant.dart';
 import '../../../../core/app/size_config.dart';
+import '../../../../core/base/element_view_base.dart';
 import '../../../widgets/default_button.dart';
+import '../controller/cart_controller.dart';
 
-class CheckoutCard extends StatelessWidget {
-  const CheckoutCard({
-    Key? key,
-  }) : super(key: key);
-
+class CheckoutCard extends ElementViewBase<CartController> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,15 +19,15 @@ class CheckoutCard extends StatelessWidget {
       // height: 174,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
         ),
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, -15),
+            offset: const Offset(0, -15),
             blurRadius: 20,
-            color: Color(0xFFDADADA).withOpacity(0.15),
+            color: const Color(0xFFDADADA).withOpacity(0.15),
           )
         ],
       ),
@@ -40,19 +39,19 @@ class CheckoutCard extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   height: getProportionateScreenWidth(40),
                   width: getProportionateScreenWidth(40),
                   decoration: BoxDecoration(
-                    color: Color(0xFFF5F6F9),
+                    color: const Color(0xFFF5F6F9),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: SvgPicture.asset("assets/icons/receipt.svg"),
+                  child: SvgPicture.asset('assets/icons/receipt.svg'),
                 ),
-                Spacer(),
-                Text("Add voucher code"),
+                const Spacer(),
+                const Text('Thêm mã giảm giá'),
                 const SizedBox(width: 10),
-                Icon(
+                const Icon(
                   Icons.arrow_forward_ios,
                   size: 12,
                   color: kTextColor,
@@ -63,21 +62,24 @@ class CheckoutCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(
-                  TextSpan(
-                    text: "Total:\n",
-                    children: [
-                      TextSpan(
-                        text: "\$337.15",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
-                      ),
-                    ],
+                Obx(
+                  () => Text.rich(
+                    TextSpan(
+                      text: 'Tổng:\n',
+                      children: [
+                        TextSpan(
+                          text: '${viewModel.cartData.value?.totalPrice ?? 0}',
+                          style: const TextStyle(
+                              fontSize: 16, color: Colors.black),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
-                    text: "Check Out",
+                    text: 'Thanh toán',
                     press: () {},
                   ),
                 ),

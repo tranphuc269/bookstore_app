@@ -2,22 +2,18 @@ import 'cart_item_data.dart';
 
 class CartData {
   CartData(
-      {required this.data,
-      required this.cartId,
-      required this.totalPrice,
-      required this.userId});
+      {required this.data, required this.cartId, required this.totalPrice});
 
   factory CartData.fromJson(Map<String, dynamic> json) {
     return CartData(
-        data: (json['data'] as List)
+        data: (json['items'] as List)
             .map((e) => CartItemData.fromJson(e))
             .toList(),
         cartId: json['cartId'],
-        totalPrice: json['totalPrice'],
-        userId: json['userId']);
+        totalPrice: json['totalPrice']);
   }
+
   String cartId;
-  String userId;
   double totalPrice;
   List<CartItemData> data;
 }

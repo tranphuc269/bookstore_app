@@ -1,13 +1,12 @@
 class CartItemData {
-  CartItemData({
-    required this.productName,
-    required this.productId,
-    required this.quantity,
-    required this.cartItemId,
-    required this.extendedPrice,
-    required this.itemPrice,
-    required this.images,
-  });
+  CartItemData(
+      {required this.productName,
+      required this.productId,
+      required this.quantity,
+      required this.cartItemId,
+      required this.images,
+      required this.productPrice,
+      required this.productShortContent});
 
   factory CartItemData.fromJson(Map<String, dynamic> json) {
     return CartItemData(
@@ -15,18 +14,17 @@ class CartItemData {
       productId: json['productId'],
       quantity: json['quantity'],
       cartItemId: json['cartItemId'],
-      extendedPrice: json['extendedPrice'],
-      itemPrice: json['itemPrice'],
+      productPrice: json['productPrice'],
+      productShortContent: json['productShortContent'],
       images: (json['images'] as List).map((e) => e.toString()).toList(),
     );
   }
 
-
   String cartItemId;
-  int quantity;
-  double itemPrice;
-  double extendedPrice;
   String productId;
+  double productPrice;
   String productName;
+  String productShortContent;
+  int quantity;
   List<String> images;
 }

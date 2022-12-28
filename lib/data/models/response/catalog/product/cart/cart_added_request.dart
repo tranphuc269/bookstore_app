@@ -1,10 +1,9 @@
 class CartAddedRequest {
-  CartAddedRequest({required this.productId, required this.quantity});
+  CartAddedRequest({required this.productId});
 
   Map<String, dynamic> toJson() {
-    return {'productId': productId, 'quantity': quantity};
+    return {'productId': productId};
   }
 
   String productId;
-  int quantity;
 }

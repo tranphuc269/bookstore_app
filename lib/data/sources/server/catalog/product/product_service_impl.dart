@@ -12,15 +12,15 @@ class ProductServiceImpl extends ProductService {
       required Function() onFailure,
       required CartAddedRequest cartRequest}) async {
     try {
-      const url = '/catalog-service/add-to-cart';
-      // TODO: implement getAllBanner
+      const url = '/catalog-service/product/add-to-cart';
+      // TODO: implement add to cart
       final _res = await sendRequest(
         url: url,
         requestMethod: RequestMethod.POST,
         useToken: true,
         body: cartRequest.toJson(),
       );
-      final CartAddedResponse producer = CartAddedResponse.fromJson(_res.data);
+      CartAddedResponse.fromJson(_res.data);
       onSuccess();
     } on Exception {
       onFailure();
@@ -37,7 +37,6 @@ class ProductServiceImpl extends ProductService {
       requestMethod: RequestMethod.GET,
       useToken: true,
     );
-    print('_res : $_res');
     final ProductListResponse product = ProductListResponse.fromJson(_res.data);
     return product.data;
   }

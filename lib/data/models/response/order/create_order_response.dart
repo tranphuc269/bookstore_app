@@ -7,7 +7,7 @@ class CreateOrderResponse extends BaseResponse {
 
   factory CreateOrderResponse.fromJson(Map<String, dynamic> json) {
     return CreateOrderResponse(
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
       data: CreateOrderData.fromJson(json['data']),
     );
   }

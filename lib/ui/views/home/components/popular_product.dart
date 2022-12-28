@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/app/size_config.dart';
 import '../../../../core/base/element_view_base.dart';
-import '../../../../data/models/Product.dart';
+
 import '../../../widgets/product_card.dart';
 import '../controller/home_controller.dart';
 import 'section_title.dart';

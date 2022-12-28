@@ -1,14 +1,14 @@
 class BaseResponse {
   BaseResponse({required this.meta});
 
-  BaseStatus meta;
+  MetaStatus meta;
 }
 
-class BaseStatus {
-  BaseStatus({required this.code, required this.message});
+class MetaStatus {
+  MetaStatus({required this.code, required this.message});
 
-  factory BaseStatus.fromJson(Map<String, dynamic> json) {
-    return BaseStatus(
+  factory MetaStatus.fromJson(Map<String, dynamic> json) {
+    return MetaStatus(
       code: json['code'],
       message: json['message'],
     );

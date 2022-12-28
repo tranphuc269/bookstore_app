@@ -45,5 +45,5 @@ class AppColors {
 
 
 
-  static const Color primary = Color(0xFFFE1D61);
+  static const Color primary = Color(0xffffffff);
 }

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/app/app_constant.dart';
 import '../../core/app/size_config.dart';
-import '../../data/models/Product.dart';
 import '../../data/models/response/catalog/product/product_data.dart';
 import '../views/details/details_screen.dart';
 import 'cached_image.dart';

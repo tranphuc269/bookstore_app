@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../views/cart/cart_binding.dart';
 import '../views/cart/cart_screen.dart';
 import '../views/complete_profile/complete_profile_screen.dart';
 import '../views/details/details_screen.dart';
@@ -26,7 +27,10 @@ class AppPages {
     GetPage(
         name: ForgotPasswordScreen.routeName,
         page: () => ForgotPasswordScreen()),
-    GetPage(name: CartScreen.routeName, page: () => CartScreen()),
+    GetPage(
+        name: CartScreen.routeName,
+        page: () => CartScreen(),
+        binding: CartBinding()),
     GetPage(
         name: CompleteProfileScreen.routeName,
         page: () => CompleteProfileScreen()),

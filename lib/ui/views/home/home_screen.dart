@@ -12,15 +12,6 @@ import 'controller/home_controller.dart';
 class HomeScreen extends StateLessViewBase<HomeController> {
   static String routeName = '/home';
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     body: HomeBody(),
-  //     bottomNavigationBar:
-  //         const CustomBottomNavBar(selectedMenu: MenuState.home),
-  //   );
-  // }
-
   @override
   Widget buildBody(BuildContext context) {
     SizeConfig().init(context);

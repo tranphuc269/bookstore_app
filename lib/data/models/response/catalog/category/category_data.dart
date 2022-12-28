@@ -1,21 +1,21 @@
 class CategoryData {
   CategoryData(
-      {required this.imgUrl,
-      required this.id,
-      required this.name,
+      {required this.image,
+      required this.categoryName,
+      required this.categoryId,
       required this.description});
 
   factory CategoryData.fromJson(Map<String, dynamic> json) {
     return CategoryData(
-      imgUrl: json['imgUrl'],
-      id: json['id'],
-      name: json['name'],
       description: json['description'],
+      image: json['image'],
+      categoryName: json['categoryName'],
+      categoryId: json['categoryId'],
     );
   }
 
-  String id;
-  String name;
-  String imgUrl;
+  String categoryId;
+  String categoryName;
   String description;
+  String image;
 }

@@ -1,15 +1,19 @@
 import 'package:get/get.dart';
 
 import '../../../../core/base/base_controller.dart';
+import '../../../../data/models/response/catalog/category/category_data.dart';
 import '../../../../data/models/response/catalog/product/product_data.dart';
+import '../../../../data/sources/server/catalog/category/category_service.dart';
 import '../../../../data/sources/server/catalog/product/product_service.dart';
 
 class HomeController extends BaseController {
-  HomeController({required this.productService});
+  HomeController({required this.productService, required this.categoryService});
 
   final ProductService productService;
+  final CategoryService categoryService;
 
   final products = List<ProductData>.empty(growable: true).obs;
+  final categories = List<CategoryData>.empty(growable: true).obs;
 
   @override
   Future<void> onInit() async {
@@ -22,7 +26,7 @@ class HomeController extends BaseController {
   }
 
   Future<void> _initialize() async {
-    await Future.wait([getProducts()]);
+    await Future.wait([getProducts(), getCategories()]);
   }
 
   Future<void> getProducts() async {
@@ -30,6 +34,11 @@ class HomeController extends BaseController {
       ..clear()
       ..addAll(
           await productService.getProductBySortPageSize(page: 0, size: 10));
-    print('products : ${products.length}');
+  }
+
+  Future<void> getCategories() async {
+    categories
+      ..clear()
+      ..addAll(await categoryService.getCategory());
   }
 }

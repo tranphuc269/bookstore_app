@@ -8,7 +8,7 @@ class CartAddedResponse extends BaseResponse {
 
   factory CartAddedResponse.fromJson(Map<String, dynamic> json) {
     return CartAddedResponse(
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
       data: json['data'],
     );
   }

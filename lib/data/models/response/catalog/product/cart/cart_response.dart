@@ -10,7 +10,7 @@ class CartResponse extends BaseResponse {
 
   factory CartResponse.fromJson(Map<String, dynamic> json) {
     return CartResponse(
-      meta: BaseStatus.fromJson(json['meta']),
+      meta: MetaStatus.fromJson(json['meta']),
       data: CartData.fromJson(json['data']),
     );
   }
